@@ -1,0 +1,68 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2758
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 //Creare un elenco inizializzato e non di 3 citt\'e0 e mostrarlo nella debug \
+//console utilizzando le collection di apex e i relativi metodi. Mostrare i \
+//valori di ogni collection nella debug console.\
+List<String> Elenco =  new List<String>();\
+List<String> Elenco2 = new List<String>\{'Napoli','Roma','Milano'\};\
+system.debug(Elenco);\
+system.debug(Elenco2);\
+system.debug(Elenco2.get(0));\
+system.debug(Elenco2.get(1));\
+system.debug(Elenco2.get(2));\
+//Creare una mappa vuota di citt\'e0 e mostrarla nella debug console. \
+//Tramite metodi legati alla mappa riempirla con almeno 4 citt\'e0 abbinate al\
+//relativo monumento turistico.\
+//Mostrare la mappa riempita nella debug console\
+Map <String,String> MappaVuota = new Map<String,String>();\
+system.debug(MappaVuota);\
+MappaVuota.put('Napoli','Maschio Angioino');\
+MappaVuota.put('Roma','Colosseo');\
+MappaVuota.put('Pisa','Torre di Pisa');\
+MappaVuota.put('Milano','Duomo di Milano');\
+system.debug(MappaVuota);\
+//Creare una lista vuota e mostrarla in debug.\
+//Aggiungere due citt\'e0: Milano e Roma e mostrarla in debug.\
+//Ottenere Milano tramite indice di posizione e mostrarlo in debug accompagnato \
+//da una stringa introduttiva.\
+//Impostare l'elemento 'Napoli' come primo dell'elenco.\
+//Mostrare la lista. Mostrare il nuovo elemento aggiunto.\
+//Rimuovere tutti gli elementi dalla lista.Mostrare la lista in debug log\
+List<String> ListaVuota =  new List<String>();\
+system.debug(ListaVuota);\
+ListaVuota.add('Milano');\
+ListaVuota.add('Roma');\
+system.debug(ListaVuota);\
+system.debug('la citt\'e0 dove st\'e0 il duomo \'e8 : ' + ListaVuota.get(0));\
+ListaVuota.add(0,'Napoli');\
+system.debug(ListaVuota);\
+system.debug(ListaVuota.get(0));\
+ListaVuota.clear();\
+system.debug(ListaVuota);\
+//Creare una lista non ordinata di 4 valori numerici, una inizializzata e\
+//l'altra riempita tramite metodo. Nella seconda inserire il numero 9 due volte\
+//Verificare se i due elenchi contengono gli stessi dati e se siano della stessa \
+//lunghezza mostrando i risultati dei confronti tramite variabile booleana.\
+//Mostrare poi anche i due elenchi\
+set<Integer> ListaNonOrdinata = new set<Integer>\{4,5,9,7\};\
+set<Integer> ListaNonOrdinata2 = new set<Integer>\{\};\
+ListaNonOrdinata2.add(9);\
+ListaNonOrdinata2.add(9);\
+ListaNonOrdinata2.add(2);\
+ListaNonOrdinata2.add(6);\
+Boolean sonoUguali = ListaNonOrdinata.equals(ListaNonOrdinata2);\
+Boolean stessaLunghezza = ListaNonOrdinata.size() == ListaNonOrdinata2.size();\
+System.debug('I due set contengono gli stessi dati ?: ' + sonoUguali);\
+System.debug('I due set sono della stessa lunghezza ?: ' + stessaLunghezza);\
+system.debug(ListaNonOrdinata2);\
+system.debug(ListaNonOrdinata);\
+//Dato '001xa000075FIloxyz' come contenuto di una variabile visualizzarla nel\
+//log. Convertirla in ID e visualizzare l'id ottenuto \
+String dato = '001xa000075FIloxyz';\
+id nuovoId = (id)dato;\
+system.debug(nuovoId);}
