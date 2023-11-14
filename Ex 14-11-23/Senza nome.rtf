@@ -1,0 +1,37 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2758
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 //Tramite Apex effetuare la concatenazione dei \
+//vaolori buon pomerigigio sign. e Rossi associati a \
+//due variabili inizializzate in precedenza .\
+//Mostrare in debug console la frase ottenuta \
+//ponendo il vaolore della seconda variabile \
+//con iiziale maiuscola tramite metodo \
+String saluto = 'Buon pomeriggio Sign.';\
+String cognome ='rossi';\
+system.debug(saluto + ' ' + cognome.substring(0, 1).toUpperCase() + cognome.substring(1));\
+//Effetuare un operazione matematica tra\
+//due numeri interi e mostrare il risultato nella debug console\
+integer primoNumero = 2;\
+integer secondoNumero = 7;\
+integer primaSomma = primoNumero + secondoNumero;\
+system.debug(primaSomma);\
+//definire una variabile di tipo boleana e mostrare \
+//il valore in debug console accompagnata da una stringa\
+Boolean condizione = true;\
+String frase = 'le mele sono rosse ?';\
+String sommaStrigBool = frase + condizione;\
+system.debug(sommaStrigBool);\
+//Rappresentare una data personalizzatae mostrarla nella debug console\
+Date compleanno = date.newInstance(2023,12,16);\
+system.debug(compleanno);\
+//Definire due date personalizzate e mostrare la differenza dei mesi che intercorre tra le due\
+Date dataNascita = date.newInstance (1995,12,16);\
+integer differenzaMesi =  compleanno.monthsBetween(dataNascita);\
+integer etaAttuale = differenzaMesi /12;\
+system.debug (differenzaMesi);\
+system.debug(etaAttuale);}
