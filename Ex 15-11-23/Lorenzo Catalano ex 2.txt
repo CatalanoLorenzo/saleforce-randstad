@@ -1,0 +1,84 @@
+system.debug('start');
+//Letta la frase "Sono maggiore di 12 caratteri" scrivere codice apex
+//per mostrare il numero di caratteri della stringa, utilizzare un costrutto 
+//condizionale per interrompere la stringa al 12° carattere.
+//Mostrare la stringa risultante.
+system.debug('EX 1');
+String frase = 'Sono maggiore di 12 caratteri';
+String nuovaFrase = '';
+for (Integer i = 0; i < frase.length(); i++) {
+    if (i == 11) {
+        break;
+    }
+    nuovaFrase += frase.substring(i, i + 1);
+}
+System.debug('La stringa frase è lunga: ' + frase.length());
+System.debug('La stringa frase fino al 12° char è: ' + nuovaFrase);
+//Utilizzare codice apex per rappresentare tramite cicli un array non 
+//parametrizzato di 10 numeri.
+system.debug('EX 2');
+Integer[] arrayNonParametrizzato = new integer[10];
+for(integer i = 0 ; i < 10 ; i++){
+arrayNonParametrizzato[i] = (Integer)Math.floor(Math.random() * 100) + 1;
+}
+system.debug(arrayNonParametrizzato);
+//Utilizzare codice apex per calcolare la media complessiva degli elementi 
+//di un vettore.
+//Utilizzare codice apex per scrivere un programma che legga tutti i numeri 
+//di un vettore contenente numeri da 1 a 50. Sommare solo i numeri in posizione
+//pari. Mostrare nella debug mode la somma intermedia fatta tra i numeri in 
+//successione e il risultato della somma finale.
+System.debug('EX 3');
+List<Integer> vettore = new List<Integer>();
+Integer sommaPari = 0;
+for (Integer i = 0; i < 10; i++) {
+    Integer numeroRandom = (Integer)Math.floor(Math.random() * 50) + 1;
+    vettore.add(numeroRandom);
+    if (Math.mod(i, 2) == 0) {  
+        sommaPari += numeroRandom;
+        System.debug('Somma del numero ' + numeroRandom + ' alla somma attuale: ' + sommaPari);
+    }
+}
+System.debug('Somma dei numeri pari è: ' + sommaPari);
+//Trasformare in codice apex il flowchart relativo alla media e alla somma
+//dei numeri pari e dispari. In particolare dato un array di 50 numeri,
+//calcolare la somma dei soli numeri pari, calcolare la somma dei 
+//soli numeri dispari. Mostrare in execution log l'array contenente 
+//solo i numeri pari;Mostrare in execution log l'array contenente solo 
+//i numeri DISPARI; Mostrare in execution log il risultato della somma
+//tra numeri pari;Mostrare in execution log il risultato della somma tra
+//numeri DISPARI;Mostrare in execution log il risultato della media 
+//tra numeri pari;Mostrare in execution log il risultato della media 
+//tra numeri DISPARI;
+System.debug('EX 4');
+Integer lunghezzaArray = 50;
+Integer[] array2 = new Integer[lunghezzaArray];
+Integer sommaP = 0;
+Integer sommaD = 0;
+Integer[] array2P = new Integer[lunghezzaArray];
+Integer[] array2D = new Integer[lunghezzaArray];
+Integer mediaP;
+Integer mediaD;
+for (Integer i = 0; i < lunghezzaArray; i++) {
+    Integer nRnd = (Integer)Math.floor(Math.random() * 100) + 1;
+    array2[i] = nRnd;
+}
+Integer indiceP = 0;
+Integer indiceD = 0;
+for (Integer j = 0; j < lunghezzaArray; j++) {
+    if (Math.mod(array2[j], 2) == 0) {
+        array2P[indiceP++] = array2[j];
+        sommaP += array2[j];
+    } else {
+        array2D[indiceD++] = array2[j];
+        sommaD += array2[j];
+    }
+}
+mediaP = sommaP / array2P.size();
+mediaD = sommaD / array2D.size();
+System.debug('Array numeri pari: ' + array2P);
+System.debug('Array numeri dispari: ' + array2D);
+System.debug('Somma numeri pari: ' + sommaP);
+System.debug('Somma numeri dispari: ' + sommaD);
+System.debug('Media numeri pari: ' + mediaP);
+System.debug('Media numeri dispari: ' + mediaD);
