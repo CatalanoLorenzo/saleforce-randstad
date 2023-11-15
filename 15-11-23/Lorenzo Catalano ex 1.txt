@@ -1,0 +1,74 @@
+system.debug('start');
+//Trasformare in codice apex i flowcart relativi agli esempi sul
+//confronto di DUE numeri per stabilirne il maggiore
+system.debug('EX :1');
+integer numero1 = 5;
+integer numero2 = 9;
+if(numero1 > numero2){
+    system.debug('numero1 è maggiore di numero2 '+ numero1 + '>=' + numero2);
+}else if(numero1 == numero2){
+    system.debug('numero2 è uguale di numero1 '+ numero2 + '=' + numero1);
+}else{
+    system.debug('numero2 è maggiore di numero1 '+ numero2 + '>' + numero1);
+}
+//Trasformare in codice apex i flowcart relativi agli esempi sul confronto di 
+//TRE numeri per stabilirne il maggiore
+system.debug('EX :2');
+integer numero3 = 2;
+list<integer> listaNumeri = new list<integer>();
+listaNumeri.add(numero1);
+listaNumeri.add(numero2);
+listaNumeri.add(numero3);
+integer numeroMaggiore = 0;
+for(integer i = 0; i < listaNumeri.size();i++){
+    if(listaNumeri[i]>numeroMaggiore){
+        numeroMaggiore = listaNumeri[i];
+    }
+}
+system.debug(numeroMaggiore);
+//Ipotizzare che una compagnia di clienti offra due piani per gli abbonati : 
+//Premium e Classic. In base al piano sono forniti degli sconti differenti.
+//Scrivere codice apex che implementi questi casi
+system.debug('EX :3');
+Map <String,String> utente1 = new Map<String,String>();
+utente1.put('PianoAbbonamento','Premium');
+Map <String,String> utente2 = new Map<String,String>();
+utente2.put('PianoAbbonamento','Classic');
+if(utente1.get('PianoAbbonamento') == 'Premium'){
+	utente1.put('Sconto','50%');
+}else{
+    utente1.put('Sconto','20%');
+}
+if(utente2.get('PianoAbbonamento') == 'Premium' ){
+	utente2.put('Sconto','50%');
+}else{
+    utente2.put('Sconto','20%');
+}
+system.debug('Sconto per utente 1 = '+ utente1.get('Sconto'));
+system.debug('Sconto per utente 2 = '+ utente2.get('Sconto'));
+//Trasformare in codice apex il flowcart relativo all'esempio di stampa
+//di una stringa 10 volte utilizzando tutti i loop disponibili.
+system.debug('EX :4');
+String stringa = 'Sono una stringa';
+//ciclo for
+    for(integer i = 0 ;i < 10;i++){
+        system.debug(stringa);
+    }
+//ciclo while
+integer i = 0 ;
+    while(i < 10){
+		system.debug(stringa);
+    }
+
+// ciclo Do While
+do{
+		system.debug(stringa);
+}while(i < 10);
+//Trasformare in codice apex il flowchart utilizzato per l'algoritmo 
+//che calcola la somma degli elementi di un vettore di lunghezza k
+system.debug('EX :5');
+integer som = 0;
+for(integer i = 0; i < listaNumeri.size();i++){
+    som += listaNumeri[i];
+}
+system.debug(som);
