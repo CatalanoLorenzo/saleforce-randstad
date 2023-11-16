@@ -1,0 +1,39 @@
+//--------------------------------------------------
+public class Persona {
+    public String nome;
+    public String cognome;
+    public Date dataDiNascita;
+    public Persona() {}
+    public Persona(String nome, String cognome, Date dataDiNascita) {
+        this.nome = nome;
+        this.cognome = cognome;
+        this.dataDiNascita = dataDiNascita;
+    }
+    public Integer giorniMancantiCompleanno() {
+        Date dataDiOggi = Date.today();
+        Integer giorniMancanti = dataDiOggi.daysBetween(dataDiNascita);
+        return giorniMancanti < 0 ? 365 + giorniMancanti : giorniMancanti;
+    }
+    public void presentati() {
+        System.debug('Nome: ' + nome + ', Cognome: ' + cognome + ', Data di Nascita: ' + dataDiNascita);
+    }
+    public Integer differenzaEta(Persona persona) {
+        return Math.abs(this.dataDiNascita.year() - persona.dataDiNascita.year());
+    }
+}
+//--------------------------------------------------
+system.debug('start');
+//Definire la classe Persona con attributi nome, cognome e data di nascita.
+//Definire inoltre al suo interno un metodo che restituisca il numero di
+//giorni mancanti al suo compleanno.
+//Si crei inoltre un metodo che si chiama 'presentati' e che fornisce i
+//dati dell'oggetto persona su cui è stato
+//invocato, un costruttore parametrizzato e un metodo che restituisca 
+//la differenza di età tra la persona su cui
+//è chiamato il metodo e la persona passata come parametro.
+//Si creino oggetti diversi per testare il codice
+Persona persona1 = new Persona('Nome1', 'Cognome1', Date.newInstance(1999, 11, 14));
+Persona persona2 = new Persona('Nome1', 'Cognome1', Date.newInstance(1995, 11, 14));
+system.debug('giorni mancanti al compleanno:'+persona1.giorniMancantiCompleanno());
+persona1.presentati();
+persona1.differenzaEta(persona2);
