@@ -1,0 +1,45 @@
+//------------------------------------
+public class Motocicletta {
+	private String marca;
+    private String modello;
+    private static integer numeroRuote = 2;
+    public Motocicletta(){}
+    public Motocicletta(String marca , String modello){
+        this.setMarca( marca);
+        this.setModello( modello);
+    }
+    public void setMarca(String marca){
+        this.marca = marca;
+    }
+	public void setModello(String modello){
+        this.modello = modello;
+    }
+    public  String getMarca(){
+        return this.marca;
+    }
+    public  String getModello(){
+        return this.modello;
+    }
+     public static Integer getNumeroRuote() {
+        return numeroRuote;
+    }
+    public void rombo(){
+        system.debug('Bruuuum!');
+    }
+}
+//------------------------------------
+system.debug('start');
+//Si crei una classe Motocicletta, definendo attributi 
+//e metodi tipici delle motociclette, contenente i tipi di costruttori visti,
+//una variabile di classe, attributi e metodi(almeno uno di questi ultimi statico).
+//Nell'execute anonymous window si crei una LISTA di motociclette e si stampi, 
+//con un metodo contenuto nella classe Motocicletta, il marchio delle motociclette create.
+system.debug('Ex 3');
+List<Motocicletta> listaMotociclette = new List<Motocicletta>{
+    new Motocicletta('Honda', 'CBR'),
+    new Motocicletta('Yamaha', 'YZF'),
+    new Motocicletta('Ducati', 'Panigale')
+};
+for (integer i = 0 ; i < listaMotociclette.size(); i++){
+	system.debug(listaMotociclette[i].getMarca());
+} 
