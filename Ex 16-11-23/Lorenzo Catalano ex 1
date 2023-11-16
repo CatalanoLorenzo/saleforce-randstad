@@ -1,0 +1,77 @@
+-------------------------------------------------------
+public class Calcolatrice1 {
+    public integer primoOperando;
+    public integer secondoOperando;
+    
+    public Calcolatrice1() {}
+
+    public Calcolatrice1(integer primoOperando, integer secondoOperando) {
+        this.primoOperando = primoOperando;
+        this.secondoOperando = secondoOperando;
+    }
+
+    public static integer somma(integer x, integer y) {
+        return x + y;
+    }
+
+    public static integer differenza(integer x, integer y) {
+        return x - y;
+    }
+
+    public static integer prodotto(integer x, integer y) {
+        return x * y;
+    }
+
+    public static double divisione(integer x, integer y) {
+        return (y != 0 )? x / y : null;
+    }
+}
+-------------------------------------------------------
+public class Calcolatrice2 {
+    public integer primoOperando;
+    public integer secondoOperando;
+    
+    public Calcolatrice2() {}
+
+    public Calcolatrice2(integer primoOperando, integer secondoOperando) {
+        this.primoOperando = primoOperando;
+        this.secondoOperando = secondoOperando;
+    }
+
+    public integer somma() {
+        return primoOperando + secondoOperando;
+    }
+
+    public integer differenza() {
+        return primoOperando - secondoOperando;
+    }
+
+    public integer prodotto() {
+        return primoOperando * secondoOperando;
+    }
+
+    public integer divisione() {
+        return secondoOperando != 0 ? primoOperando / secondoOperando : null;
+    }
+}
+-------------------------------------------------------
+system.debug('start');
+//Definire due classi Calcolatrice, con due attributi, primoOperando, 
+//secondoOperando, che abbia anche quattro metodi per restituire il risultato
+//rispettivamente della somma, differenza, prodotto e divisione tra i due
+//operandi.
+//La prima classe è Calcolatrice1 con tutti i metodi statici parametrizzati.
+//La seconda classe è Calcolatrice2 con tutti i metodi non statici e non
+//parametrizzati.
+system.debug('EX 1');
+Calcolatrice1 Oggetto1 = new Calcolatrice1(2, 7);
+Calcolatrice2 Oggetto2 = new Calcolatrice2(4, 9);
+system.debug(Calcolatrice1.somma(2,3));
+system.debug(Calcolatrice1.differenza(2,3));
+system.debug(Calcolatrice1.prodotto(2,3));
+system.debug(Calcolatrice1.divisione(2,3));
+system.debug(Oggetto2.somma());
+system.debug(Oggetto2.differenza());
+system.debug(Oggetto2.prodotto());
+system.debug(Oggetto2.divisione());
+-------------------------------------------------------
