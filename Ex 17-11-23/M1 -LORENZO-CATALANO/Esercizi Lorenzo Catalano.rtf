@@ -1,0 +1,523 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2758
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww38200\viewh18500\viewkind0
+\deftab560
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\fs26 \cf0 (1) un algoritmo \'e8 una sequenza di istruzioni ben definita  che servono ad eseguire un compito o risolvere un problema\
+(2) un algoritmo puo essere rappresentato sotto forma di testo (come un programma) , di grafico(tramite diagrammi di flusso) o tramite pseudocodice \
+(3)le caratteristiche che deve avere un Algoritmo sono : un input e output definiti (a seconda del dato che riceve si aspetta un determinato output),deve terminare dopo un numeri definito di compiti (non pu\'f2 durare l\'92infinito),  ogni passo non pu\'f2 essere scritto i modo equivocabile (un compito pu\'f2 essere interpretato solo in un determinato modo)\
+(4 - 5)il blocco di inizio (avvio programma)-> blocco d\'92ingresso(dati di input)-> blocco di Decisione(if)-> blocco di processo(operazioni che deve eseguire l\'92algoritmo)-> blocco di fine(fine programma)\
+\
+(6)apex \'e8 un linguaggio di programmazione orientato ad oggetti ed \'e8 fortemente tipizzato \
+(7)i tipi di dato delle variabili devono essere per forza dichiarati \
+(8)I tipi primitivi in Apex includono:Integer,Double,Boolean,String,Date,Time,Datetime,ID\
+(9)String nomeVariabile = \'91Sono una variabile\'92\
+(10) l codice APEX si esegue sulla piattaforma salesforce in particolare nella developer console\
+(11)sono strutture di dati che consentono di memorizzare valori e sono List,Set,Map e Array\
+(12)List<String> nomeLista = new List<String>()\
+(13)consiste nella conversione di un tipo di dato in un altro  es : Double numero1 = 10.5; Integer numero2 = (Integer)numero1;\
+(14)length()[restituisce la lunghezza della stringa],toUpperCase()[converte tutti i caratteri della stringa in maiuscolo],toLowerCase()[l\'92opposto di toUpperCase()],substring(integer inizio ,Integer fine)[restituisce una stringa che inizia da \'93inizio\'94 e finisce da \'93fine\'94 della striga su cui viene applicato]\
+\
+(15)put(key, valore)[aggiunge un elemento alla map in posizione key].get(key)[recupera il valore dalla map associato alla key],containsKey(key) e containsValue(value)[controllano se nella map ci sono la key o il valore passato come parametro ]\
+(16)sia le list che i set sono entrambe collezioni di elementi ma le list sono ordinate mentre i set no e nella list possono esserci duplicati \
+(17)nella programmazione ad oggetti un oggetto \'e8 un\'92istanza di una classe (un esempio la classe \'e8 una \'91ricetta per come deve essere un dolce\'92 e l\'92oggetto \'e8 il dolce\
+(18)un metodo \'e8 una funzione associata ad un oggetto\
+(19)la classe \'91modello\'92 per poter creare degli oggetti ,una descrizione che definisce gli attributi e i metodi di quest\'92ultimo\
+(20) modificatore d\'92accesso (public) la parola class ,il nome della classe e le parantesi graffe che racchiudono il codice es: public class nomeClasse \{ \'93qui va il codice \'93\}\
+(21)la variabile statica \'e8 una variabile associata alla classe e non all\'92oggetto , \'e8 condivisa pero da tutti gli oggetti stanziati da quella classe \
+(22)\'e8 un metodo che come requisito chiede dei valori in ingresso per poter essere eseguito\
+(23)\'e8 un metodo della classe per poter stanziare un nuovo oggetto e ce ne sono di due tipi uno non parametrizzato e uno parametrizzato \
+(24)un metodo si richiama aggiungendo al nome dell\'92oggetto instanziato il \'93.\'94 E il nome del metodo con \'93()\'94 ed eventuali parametri all\'92interno delle parentesi tonde \
+(25)un metodo statico si richiama similmente a un non statico ma invece di \'93usarlo su un oggetto\'94 lo si utilizza col nome di classe\
+\
+(26)L\'92oggetto pu\'f2 assumere il tipo di una sua superclasse.\'c8 inteso come la capacit\'e0 di un codice di avere diversi comportamenti oppure la capacit\'e0 di uno stesso codice di essere utilizzato da pi\'f9 classi.\
+(27)un\'92istanza di una classe \'e8 l\'92oggetto creato a partire dalla classe\
+(28)un oggetto deve avere degli attributi che lo definiscono ,dei metodi che l\'92oggetto pu\'f2 eseguire e l\'92unicit\'e0 rispetto ad altri oggetti creati dalla stessa classe\
+(29)sono parole chiave in apex che determinano il tipo di \'93accessibilit\'e0 \'93 pu\'f2 avere un attributo/metodo  ad esempio :public e private\
+(30)un interfaccia \'e8 una \'93estensione\'94 di metodi che pu\'f2 essere associata ad una classe\
+//\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+system.debug('start');\
+//Dato un vettore di 8 elementi, si calcoli e si mostri la somma degli elementi \
+//e si calcoli e si mostri la radice quadrata della somma degli elementi della \
+//collectionin posizione pari. me lo realizzi in pseudocodice\
+system.debug('Ex 1');\
+List <Integer> lista = new List<Integer>\{1,2,3,4,5,6,7,8\};\
+Integer somma = 0;\
+Integer sommaEP = 0;\
+Double radice = 0.0;\
+for(Integer i = 0; i < lista.size()-1 ;i++)\{\
+    somma += lista.get(i);\
+    if(Math.mod(i,2) == 0)\{\
+        sommaEP +=lista.get(i);\
+    \}\
+\}\
+radice = Math.sqrt(sommaEP);\
+system.debug(somma);\
+system.debug(sommaEP);\
+system.debug(radice);\
+system.debug('end');\
+//\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+system.debug('start');\
+//Si crei una lista di Stringhe chiamata \'91colori\'92 i cui\
+//elementi sono \'91giallo\'92, \'91verde\'92 e \'91blu\'92. Si aggiunga\
+//in coda l\'92elemento \'91rosso\'92. \
+//Si sostituisca poi il valore presente alla posizione 1 con 'nero\'91 e si\
+//aggiunga in posizione 1 il valore 'bianco\'91. Si\
+//rimuova poi l'elemento della posizione 2 e infine\
+//si controlli se \'e8 contiene l'elemento \'91giallo\'92.\
+system.debug('Ex 2');\
+list<String> colori = new list<String>\{'giallo','verde','blu'\};\
+colori.add('rosso');\
+system.debug(colori);\
+colori[1] ='nero';\
+system.debug(colori);\
+colori.add(1,'bianco');\
+system.debug(colori);\
+colori.remove(2);\
+system.debug('contiente il colore giallo ?' + colori.contains('giallo'));\
+system.debug('end');\
+//\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+system.debug('start');\
+//Creare una mappa di 5 coppie chiave valore composte da prodotti con il\
+//relativo prezzo. La mappa \'e8 data dall\'92unione di una o pi\'f9 collection, per\
+//mostrare prodotti e prezzi . Mostrare in console per ogni chiave il relativo\
+//valore.Verificare che all'interno della mappa sia presente la chiave 'libro'\
+//e mostrare la risposta della richiesta tramite system.debug\
+system.debug('Ex 3');\
+Map<String,Double> listino = new Map<String,Double>();\
+List<String> prodotti = new List<String>\{'libro', 'computer', 'telefono', 'maglietta', 'scarpe'\};\
+List<Double> prezzi = new List<Double>\{15.99, 899.99, 499.99, 29.99, 79.99\};\
+for (Integer i = 0; i < prodotti.size(); i++) \{\
+    listino.put(prodotti[i], prezzi[i]);\
+\}\
+for (String chiave : listino.keySet()) \{\
+    System.debug(chiave + ': ' + listino.get(chiave));\
+\}\
+System.debug('La mappa contiene la chiave \\'libro\\': ' + listino.containsKey('libro'));\
+system.debug('end');\
+//\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+//\'97\'97\'97\'97classe\'97\'97\'97\'97\'97\
+public class StringArrayMessage \{\
+    public static List<String> generate(Integer n) \{\
+        List<String> lista = new List<String>();\
+        for (Integer i = 0; i < n; i++) \{\
+            lista.add('Messaggio ' + i);\
+        \}\
+        return lista;\
+    \}\
+\}\
+//\'97\'97\'97dev Con\'97\'97\'97\'97\'97\
+system.debug('start');\
+//Creare una classe chiamata 'StringArrayMessage\'92con ambito di visibilit\'e0 pubblico.\
+//-La classe deve avere un metodo pubblico statico chiamato'generate\'92.\
+//-Questo metodo 'generate\'92 deve ritornare una lista / array di stringhe.\
+//-Le stringhe devono essere formattate secondo la struttura: \
+//\'91Messaggio n\'92, \'91 Messaggio n\'92, dove n rappresenta l\'92indicedi \
+//posizione corrente della stringa nell\'92array.\
+//-Il numero delle stringhe ritornate, e quindi la lunghezza delvettore,\
+//\'e8 determinato dalla variabile numerica presa come parametro definito nel\
+//metodo'generate\'92\
+//-Implementare la classe nell\'92 Anonymous Window\
+System.debug('Ex 4');\
+List<String> listaIst = StringArrayMessage.generate(10);\
+for (String e : listaIst) \{\
+    System.debug(e);\
+\}\
+System.debug('end');\
+//\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+//\'97\'97\'97\'97classe\'97\'97\'97\'97\'97\
+public class classeEx5 \{\
+	public static Map<String, Integer> contaChar(String frase) \{\
+    	Map<String, Integer> mappaChar = new Map<String, Integer>();\
+        for (String carattere : frase.split('')) \{\
+            if (mappaChar.containsKey(carattere)) \{\
+                mappaChar.put(carattere, mappaChar.get(carattere) + 1);\
+            \} else \{\
+                mappaChar.put(carattere, 1);\
+            \}\
+        \}\
+        return mappaChar;\
+    \}\
+\}\
+//\'97\'97\'97dev Con\'97\'97\'97\'97\'97\
+system.debug('start');\
+//Data una frase, passata come parametro al\
+//metodo, si definisca una classe che abbia un\
+//metodo capace di scorrere quest\'92ultima un\
+//carattere alla volta. Tale carattere verr\'e0 aggiunto\
+//come chiave ad una mappa e vi si assocer\'e0 come\
+//valore il numero delle sue occorrenze. Si proceda\
+//poi creando le strutture necessarie ad ottenere\
+//un output del seguente tipo, ottenuto definendo\
+//come frase la stringa \'91Buon lavoro ragazzi!\
+//Suggerimento: al fine di svolgere l\'92esercizio\
+//richiesto, si consulti la documentazione per trovare\
+//un metodo della classe String che suddivida, data\
+//una stringa, quest\'92ultima in singoli caratteri e un\
+//altro metodo che conteggi il numero di ripetizioni\
+//(occorrenze) del carattere all\'92interno della stringa data.\
+System.debug('Ex 5');\
+String fraseTest = 'Buon lavoro ragazzi!';\
+Map<String, Integer> risultatoChar = classeEx5.contaChar(fraseTest);\
+System.debug('Risultato:');\
+for (String key : risultatoChar.keySet()) \{\
+    System.debug(key + ': ' + risultatoChar.get(key));\
+\}\
+System.debug('end');\
+//\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+//\'97\'97\'97\'97classe\'97\'97\'97\'97\'97\
+public class Impiegato \{\
+	public String nome;\
+    public String cognome;\
+    public Integer salario;\
+    public Impiegato()\{\}\
+    public Impiegato(String nome,String cognome,Integer salario)\{\
+        this.nome = nome;\
+        this.cognome = cognome;\
+        this.salario = salario;\
+    \}\
+    public String dettagli()\{\
+        return 'nome : '+this.nome +', cognome : '+ this.cognome + ', salario : ' + this.salario;\
+    \}\
+    public void aumentaSalario (integer aumento)\{\
+        this.salario =  this.salario + (this.salario * (aumento / 100));\
+    \}\
+    public Boolean confrontoSalario(Impiegato impiegato2)\{\
+        if(this.salario > impiegato2.salario)\{\
+            return true;\
+        \}else\{\
+            return false;\
+        \}\
+    \}\
+\}\
+//\'97\'97\'97dev Con\'97\'97\'97\'97\'97\
+system.debug('start');\
+//Si crei una classe Impiegato che dichiara le variabili nome, cognome, salario.\
+//-Si crei un costruttore parametrizzato.\
+//-Si dichiari un metodo dettagli() che restituisca in una stringa le\
+//informazioni sulla persona in questione.\
+//-Si dichiari un metodo aumentaSalario () che aumenti lo stipendio secondo \
+//una certa percentuale.\
+//-Si creino poi 2 istanze e si aumenti il salario di impiegato1 del 10% e\
+//poi si verifichi con un ulteriore metodo se il salario di impiegato 1 \
+//\'e8 maggiore di quello di impiegato2.\
+//-Si noti che nell'anonymous window devono essere presenti solo creazioni\
+//di oggetti, invocazione a metodi e istruzioni di stampa.\
+System.debug('Ex 6');\
+Impiegato imp1 = new Impiegato( 'nome1', 'cognome1', 1200);\
+Impiegato imp2 = new Impiegato( 'nome2', 'cognome2', 1500);\
+imp1.aumentaSalario(10);\
+system.debug('il salario di impiegato 1 \'e8 maggiore di quello di impiegato2 ? '+imp1.confrontoSalario(imp2));\
+System.debug('end');\
+//\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+//\'97\'97\'97\'97classe\'97Persona\'97\'97\'97\'97\
+public virtual class Persona \{\
+    public String nome;\
+    public String cognome;\
+    public Persona() \{\}\
+    public Persona(String nome, String cognome) \{\
+        this.nome = nome;\
+        this.cognome = cognome;\
+    \}\
+    public Persona(String cognome) \{\
+        this.nome = 'anonimo';\
+        this.cognome = cognome;\
+    \}\
+    public virtual void dettagli() \{\
+        System.debug('nome: ' + this.nome + ', cognome: ' + this.cognome);\
+    \}\
+    public String saluto(String nome) \{\
+        return 'ciao ' + nome;\
+    \}\
+\}\
+//\'97\'97\'97\'97classe\'97Employee\'97\'97\'97\'97\
+public class Employee extends Persona \{\
+    Integer salario;\
+    String azienda;\
+    public Employee(String nome, String cognome,Integer salario) \{\
+        super(nome, cognome);\
+        this.salario = salario;\
+    \}\
+    public override void dettagli() \{\
+        System.debug('nome: ' + this.nome + ', cognome: ' + this.cognome + ', salario: ' + this.salario);\
+    \}\
+\}\
+//\'97\'97\'97dev Con\'97\'97\'97\'97\'97\
+system.debug('start');\
+//Creare una superclasse che vada a contenere almeno due attributi, \
+//due costruttori parametrizzati e due metodi,uno dei quali deve stampare le \
+//caratteristiche dell'istanza ed un altro a piacere che pu\'f2 essere sovrascritto.\
+//-Creare poi una sottoclasse (che quindi estenda la superclasse) che a sua\
+//volta contenga almeno due attributi e che vada ad implementare almeno un \
+//costruttore parametrizzato che utilizzi come parametro un attributo della classe padre.\
+//-Implementare nella sottoclasse anche un metodo a scelta ed un altro che\
+//vada a sovrascrivere quello della classe padre.\
+//-Dimostrare il funzionamento di tutto ci\'f2 che \'e8 stato costruito nelle due \
+//classi usando l' Execute Anonymous Window.\
+System.debug('Ex 7');\
+Persona persona1 = new Persona('Mario', 'Rossi');\
+Employee employee1 = new Employee('Giovanni', 'Bianchi',50000);\
+System.debug('Saluto: ' + persona1.saluto('Luca'));\
+persona1.dettagli();\
+employee1.dettagli();\
+System.debug('end');\
+//\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+//\'97\'97\'97\'97classe\'97\'97\'97\'97\'97\
+public virtual class Poligono \{\
+public List<Integer> lati = new List<Integer>();\
+    public Poligono()\{\}\
+    public Poligono(List<Integer> lati)\{\
+        this.lati = lati;\
+    \}\
+    public virtual Boolean Controllo ()\{\
+        if(lati.size()> 2)\{\
+        	return True;\
+        \}else\{\
+            return false;\
+        \}\
+    \}\
+\}\
+//\'97\'97\'97\'97classe\'97\'97\'97\'97\'97\
+public class Quadrato extends Poligono\{\
+    public Quadrato()\{\}\
+    public Quadrato(List<Integer> lati)\{\
+       super(lati);\
+    \}\
+    public override Boolean Controllo ()\{\
+        if(lati.size() == 4 )\{\
+             Set<integer> setLati =new Set<Integer>(lati);\
+            if(setLati.size() == 1)\{\
+                return true;\
+            \}else\{\
+            	return false;\
+            \}\
+        \}else\{\
+        	return false;\
+        \}\
+    \}\
+    public Double area ()\{\
+        return lati[0] * lati[0];\
+    \}\
+    public Double perimetro ()\{\
+        return lati[0] * 4;\
+    \}\
+\}\
+//\'97\'97\'97\'97classe\'97\'97\'97\'97\'97\
+public class TriangoloIsoscele extends Poligono \{\
+	public TriangoloIsoscele()\{\}\
+    public TriangoloIsoscele(List<Integer> lati)\{\
+       super(lati);\
+    \}\
+    public override Boolean Controllo ()\{\
+        if(lati.size() == 3 )\{\
+             Set<integer> setLati =new Set<Integer>(lati);\
+            if(setLati.size() == 2)\{\
+                return true;\
+            \}else\{\
+            	return false;\
+            \}\
+        \}else\{\
+        	return false;\
+        \}\
+    \}\
+    public Double area ()\{\
+        if (lati[0] == lati[1])\{\
+            return (lati[0]*lati[2])/2;\
+        \}else\{\
+        	return (lati[0]*lati[1])/2;\
+        \}\
+	\}\
+    public Double perimetro ()\{\
+        return lati[0]+lati[1]+lati[2];\
+    \}\
+\}\
+//\'97\'97\'97\'97classe\'97\'97\'97\'97\'97\
+public class Rettangolo extends Poligono\{\
+	public Rettangolo()\{\}\
+    public Rettangolo(List<Integer> lati)\{\
+       super(lati);\
+    \}\
+    public override Boolean Controllo ()\{\
+        if(lati.size() == 4 )\{\
+             Set<integer> setLati =new Set<Integer>(lati);\
+            if(setLati.size() == 2)\{\
+                return true;\
+            \}else\{\
+            	return false;\
+            \}\
+        \}else\{\
+        	return false;\
+        \}\
+    \}\
+    public Integer perimetro() \{\
+    if (lati.size() == 4) \{\
+        List<Integer> listaM = new List<Integer>(lati);\
+        \
+        if (listaM.size() == 2) \{\
+            return (2 * listaM[0]) + (2 * listaM[1]);\
+        \} else \{\
+            return null; \
+        \}\
+    \} else \{\
+        return null;\
+    \}\
+    \}\
+    public Integer area()\{\
+    	if (lati.size() == 4) \{\
+        	List<Integer> listaM = new List<Integer>(lati);\
+        \
+        	if (listaM.size() == 2) \{\
+            	return (listaM[0] * listaM[1])/2;\
+        	\} else \{\
+            return null; \
+        		\}\
+        \}else \{\
+        return null;\
+        \}\
+    \}\
+//\'97\'97\'97dev Con\'97\'97\'97\'97\'97\
+system.debug('start');\
+//Realizzare una serie di classi che consentano il\
+//calcolo dell'area e del perimetro dei poligoni\
+//quadrato, triangolo isoscele e rettangolo.\
+//-Effettuare anche i dovuti controlli per ciascuna forma geometrica. \
+//Ad esempio tutti i lati del quadrato dovranno essere uguali tra loro, \
+//il triangolo isoscele deve avere almeno due lati uguali ecc.\
+//-Una volta create le classi istanziare un oggetto per ciascuna figura\
+//geometrica e invocare i metodi che ne consentono i calcoli matematici.\
+System.debug('Ex 8');\
+List<Integer> lati1 = new List<Integer>\{2, 2, 2, 2\};\
+Quadrato q = new Quadrato(lati1);\
+List<Integer> lati2 = new List<Integer>\{2, 2, 1\};\
+TriangoloIsoscele t = new TriangoloIsoscele(lati2);\
+List<Integer> lati3 = new List<Integer>\{2, 2, 1, 1\};\
+Rettangolo r = new Rettangolo(lati3);\
+system.debug('\'e8 un quadrato ?:' + q.Controllo());\
+system.debug('il perimetro del quadrato \'e8:' + q.perimetro());\
+system.debug('l aria del quadrato \'e8:' + q.area());\
+system.debug('\'e8 un triangolo ?:' + t.Controllo());\
+system.debug('il perimetro del triangolo \'e8:' + t.perimetro());\
+system.debug('l aria del triangolo \'e8:' + t.area());\
+system.debug('\'e8 un rettangolo ?:' + r.Controllo());\
+system.debug('il perimetro del rettangolo \'e8:' + r.perimetro());\
+system.debug('l aria del rettangolo \'e8:' + r.area());\
+System.debug('end');\
+//\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+//\'97\'97\'97\'97classe\'97Persona\'97\'97\'97\
+public virtual class Persona \{\
+    public String nome;\
+    public String cognome;\
+    public Map<String,Map<String,Integer>> acquisti = new  Map<String,Map<String,Integer>>();\
+    public Persona() \{\}\
+    public Persona(String nome, String cognome) \{\
+        this.nome = nome;\
+        this.cognome = cognome;\
+    \}\
+    public Persona(String cognome) \{\
+        this.nome = 'anonimo';\
+        this.cognome = cognome;\
+    \}\
+    public virtual void dettagli() \{\
+        System.debug('nome: ' + this.nome + ', cognome: ' + this.cognome);\
+    \}\
+    public String saluto(String nome) \{\
+        return 'ciao ' + nome;\
+    \}\
+\}\
+//\'97\'97\'97\'97classe\'97Negozio\'97\'97\'97\
+public class Negozio \{\
+	public String nome ;\
+    public Integer numeroDipedenti;\
+    public Map<String,Map<String,Integer>> inventario = new  Map<String,Map<String,Integer>>\{\};\
+    public Negozio ()\{\}\
+    public Negozio (String nome,Integer numeroDipedenti)\{\
+        this.nome=nome;\
+        this.numeroDipedenti = numeroDipedenti ;\
+    \}\
+    public void nuovoOggetto (String nome,Integer prezzo,Integer quantita)\{\
+        if(inventario.containsKey(nome) == false )\{\
+            if(quantita <= 100)\{\
+                Map<String,Integer> nuovoOg = new Map <String,Integer>();\
+        		nuovoOg.put('prezzo',prezzo);\
+        		nuovoOg.put('Qta',quantita);\
+          		inventario.put(nome,nuovoOg);\
+                \}\
+        \}else\{\
+            Integer nuovaQuantita = inventario.get(nome).get('Qta') + quantita;\
+            if( nuovaQuantita <= 100) \{\
+            inventario.get(nome).put('Qta', nuovaQuantita);\
+            \}\
+        \}\
+    \}\
+    public void prodottiDisponibili() \{  \
+    	for (String nome : inventario.keySet()) \{\
+        	Integer quantita = inventario.get(nome).get('Qta');\
+        	if (quantita > 0) \{\
+            	System.debug('Prodotto: ' + nome + ', Quantit\'e0 disponibile: ' + quantita);\
+        	\}\
+    	\}       \
+	\}\
+    public void vendita(Persona persona, String nome, Integer quantita)\{\
+        if (inventario.containsKey(nome) && inventario.get(nome) != null) \{\
+            Integer quantitaProdotto = inventario.get(nome).get('Qta');\
+            Integer prezzoProdotto = inventario.get(nome).get('prezzo'); // Aggiunto\
+\
+            if (quantitaProdotto != null && prezzoProdotto != null && quantitaProdotto >= quantita) \{\
+                Map<String,Integer> nuovoAcquisto = new Map<String,Integer>();\
+                nuovoAcquisto.put('prezzo', prezzoProdotto); // Modificato\
+                nuovoAcquisto.put('Qta', quantita);\
+                persona.acquisti.put(nome, nuovoAcquisto);\
+\
+                inventario.get(nome).put('Qta', quantitaProdotto - quantita);\
+                prodottiDisponibili();\
+                \
+                System.debug('Acquistato ' + quantita + ' ' + nome + '(s) da ' + persona.nome);\
+            \} else \{\
+                System.debug('Quantit\'e0 insufficiente di ' + nome + ' disponibile o prezzo non presente.');\
+            \}\
+        \} else \{\
+            System.debug('Prodotto non presente nell\\'inventario o inventario non inizializzato correttamente.');\
+        \}\
+    \}\
+\
+\
+\}\
+//\'97\'97\'97dev Con\'97\'97\'97\'97\'97\
+system.debug('start');\
+//Si realizzi in apex una classe che simuli la vendita di alcuni prodotti.\
+//In particolare si vuole mostrare il nome del negozio e il numero complessivo\
+//dei suoi dipendenti.\
+//Creare poi una serie di metodi che consentano di:\
+//-Mostrare l'elenco dei prodotti disponibili, aggiunti tramite metodo \
+//sull'oggetto istanziato, dei relativi prezzi e quantit\'e0 disponibile, \
+//specificando che la quantit\'e0 di ogni prodotto non pu\'f2 essere maggiore di 100 ;\
+//-"Vendere" un prodotto alla persona indicata come cliente.\
+//-Il cliente non \'e8 altro che un'istanza della classe Persona.\
+//-Mostrare la persona e il prodotto che ha acquistato. \
+//Aggiornare e mostrare la lista dei prodotti disponibili una volta\
+//che i prodotti sono stati venduti;\
+//-Mostrare un messaggio di errore se si cerca di acquistare un prodotto che non \'e8 pi\'f9 disponibile. \
+//Ad esempio se i prodotti disponibili sono penna con costo 2 euro e quantit\'e0 1\
+//e due clienti cercano di acquistarla, il primo riuscir\'e0 tranquillamente\
+//nell'acquisto e, all'invocazione di visualizzazione della lista, "penna" non\
+//comparir\'e0 pi\'f9.\
+//Al secondo cliente verr\'e0 restituito il messaggio "il prodotto non \'e8 pi\'f9 acquistabile".\
+System.debug('Ex 9');\
+Negozio mioNegozio = new Negozio('SuperNegozio', 5);\
+system.debug(mioNegozio.inventario);\
+mioNegozio.nuovoOggetto('Penna', 2, 50);\
+mioNegozio.nuovoOggetto('Quaderno', 5, 30);\
+mioNegozio.nuovoOggetto('Matita', 1, 75);\
+mioNegozio.prodottiDisponibili();\
+Persona cliente = new Persona('Mario', 'Rossi');\
+mioNegozio.vendita(cliente, 'Penna', 3);\
+mioNegozio.vendita(cliente, 'Quaderno', 2);\
+mioNegozio.vendita(cliente, 'Matita', 10);\
+System.debug('Acquisti di ' + cliente.nome + ':');\
+System.debug(cliente.acquisti);\
+mioNegozio.prodottiDisponibili();\
+System.debug('end');\
+}
