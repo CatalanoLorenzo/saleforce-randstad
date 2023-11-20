@@ -1,0 +1,198 @@
+//----------------------------------
+//--------------classi--------------
+//--------------Veicolo-------------
+public virtual class Veicolo {
+	public integer cavalli;
+    public integer sistemaFrenante;
+    
+    public Veicolo(){}
+    public Veicolo(integer cavalli,integer sistemaFrenante){
+        this.cavalli=cavalli;
+        this.sistemaFrenante = sistemaFrenante;
+    }
+    public virtual void accelera() {
+        if(cavalli > 200){
+            system.debug('Questo veicolo accelera molto rapidamente');
+        }else if(cavalli <= 200 && cavalli > 100){
+            system.debug('Questo veicolo accelera rapidamente');
+        }else{
+            system.debug('Questo veicolo ha un\'accelerazione nella media');
+        }
+    }
+	public virtual void decelera() {
+        if(sistemaFrenante >= 8){
+            system.debug('Questo veicolo frena prontamente');
+        }else if(sistemaFrenante >=6 && sistemaFrenante < 8){
+            system.debug('Questo veicolo frena con sufficiente rapidità');
+        }else{
+            system.debug('Questo veicolo ha un sistema frenante mediocre');
+        }
+    }
+    public String caratteristiche (){
+        return 'Cavalli:' + this.cavalli + 'Sistema Frenante:' + this.sistemaFrenante;
+    }
+}
+//--------------Motociclo-------------
+public class Motociclo extends Veicolo {
+    public integer numeroRuote = 2;
+    public boolean isImpenna ;
+    public Motociclo(){}
+    public Motociclo(integer cavalli,integer sistemaFrenante,boolean isImpenna){
+        super( cavalli, sistemaFrenante);
+        this.isImpenna= isImpenna;
+    }
+    public void caratteristicheMotociclo(){
+        system.debug(super.caratteristiche() + this.numeroRuote);
+    }
+    public override void accelera(){
+        if(cavalli > 200){
+            if(isImpenna){
+            	system.debug('Questo veicolo impenna');
+            }else{
+            	system.debug('Questo veicolo accelera molto rapidamente');
+            }
+        }else if(cavalli <= 200 && cavalli > 100){
+            system.debug('Questo veicolo accelera rapidamente');
+        }else{
+            system.debug('Questo veicolo ha un\'accelerazione nella media');
+        }
+    }
+    public override void decelera() {
+        if(sistemaFrenante >= 8){
+            if(isImpenna){
+            	system.debug('Questo veicolo si impenna al contrario');
+            }else{
+            	system.debug('Questo veicolo frena prontamente');
+            }
+        }else if(sistemaFrenante >=6 && sistemaFrenante < 8){
+            system.debug('Questo veicolo frena con sufficiente rapidità');
+        }else{
+            system.debug('Questo veicolo ha un sistema frenante mediocre');
+        }
+    }
+}
+//--------------Automobile--------------
+public class Automobile extends Veicolo {
+    public integer numeroRuote = 4;
+	public Automobile(){}
+    public Automobile(integer cavalli,integer sistemaFrenante){
+        super( cavalli, sistemaFrenante);
+    }
+    public void caratteristicheAutomobile(){
+        system.debug(super.caratteristiche() + this.numeroRuote);
+    }
+     public override void accelera(){
+        if(cavalli > 200){
+            	system.debug('Questo veicolo non impenna');
+            	system.debug('Questo veicolo accelera molto rapidamente');
+            
+        }else if(cavalli <= 200 && cavalli > 100){
+            system.debug('Questo veicolo accelera rapidamente');
+        }else{
+            system.debug('Questo veicolo ha un\'accelerazione nella media');
+        }
+    }
+    public override void decelera() {
+        if(sistemaFrenante >= 8){
+            system.debug('Questo veicolo puo attivare l\'ABS\'');
+            system.debug('Questo veicolo frena prontamente');
+        }else if(sistemaFrenante >=6 && sistemaFrenante < 8){
+            system.debug('Questo veicolo frena con sufficiente rapidità');
+        }else{
+            system.debug('Questo veicolo ha un sistema frenante mediocre');
+        }
+    }
+}
+//-------------Apercar----------
+public class Apercar extends Veicolo{
+    public integer numeroRuote = 3;
+    public boolean isImpenna ;
+	public Apercar(){}
+    public Apercar(integer cavalli,integer sistemaFrenante,boolean isImpenna){
+        super( cavalli, sistemaFrenante);
+        this.isImpenna= isImpenna;
+    }
+    public void caratteristicheApercar(){
+        system.debug(super.caratteristiche() + this.numeroRuote);
+    }
+    public override void accelera(){
+        if(cavalli > 200){
+            if(isImpenna){
+            	system.debug('Questo veicolo impenna');
+            }else{
+            	system.debug('Questo veicolo accelera molto rapidamente');
+            }
+        }else if(cavalli <= 200 && cavalli > 100){
+            system.debug('Questo veicolo accelera rapidamente');
+        }else{
+            system.debug('Questo veicolo ha un\'accelerazione nella media');
+        }
+    }
+    public override void decelera() {
+        if(sistemaFrenante >= 8){
+            if(isImpenna){
+            	system.debug('Questo veicolo si ribalta');
+            }
+            system.debug('Questo veicolo frena prontamente');
+        }else if(sistemaFrenante >=6 && sistemaFrenante < 8){
+            system.debug('Questo veicolo frena con sufficiente rapidità');
+        }else{
+            system.debug('Questo veicolo ha un sistema frenante mediocre');
+        }
+    }
+}
+//---------------------AW------------------------
+//Definire una classe Apex Veicolo con attributi coerenti, 
+//tra cui sicuramente devono essere presenti gli attributi "cavalli" e
+//  "sistemaFrenante".
+//Tale classe ha a disposizione tre classi figlie di veicoli: Motocicli,
+//   Automobili e Apecar. (NB: Scrivere i nomi delle classi al SINGOLARE)
+//Definire queste ultime come estensione della classe comune chiamata
+//   Veicolo.
+//Ogni Veicolo dovrà implementare, oltre agli attributi e ai costruttori
+//  comuni, anche i metodi:
+//-void accelera() {...};
+//-void decelera() {...};
+//- Nel metodo accelera() implementare un codice nel corpo tale che:
+//Se il valore dell'attributo "cavalli" supera 200 allora si stamperà 
+//'Questo veicolo accelera molto rapidamente'.
+//Se il valore dell'attributo "cavalli" supera 100 allora si stamperà 
+//'Questo veicolo accelera rapidamente'.
+//Altrimenti sarà stampato 'Questo veicolo ha un\'accelerazione nella 
+//media'.
+//- Nel metodo decelera() implementare un codice nel corpo tale che:
+//Se il valore dell'attributo "sistemaFrenante" è maggiore o uguale
+//ad 8 allora si stamperà 'Questo veicolo frena prontamente'.
+//Se il valore dell'attributo "sistemaFrenante" è maggiore o uguale 
+//a 6 allora si stamperà 'Questo veicolo frena con sufficiente rapidità'.
+//Altrimenti sarà stampato 'Questo veicolo ha un sistema frenante 
+//mediocre'.
+//Entrambi i metodi saranno poi sovrascritti da implementazioni più
+//specifiche nelle classi figlie.
+//- Implementare anche un metodo che stampi le caratteristiche della
+//    classe veicolo.
+//- Implementare, inoltre, almeno un metodo nella classe padre che sarà
+//    poi invocato su di un'istanza della classe figlia.
+System.debug('Ex 2');
+system.debug('start');
+Veicolo veicolo =new Veicolo(150, 3);
+	veicolo.accelera();
+	veicolo.decelera();
+	veicolo.caratteristiche();
+
+Motociclo m = new Motociclo(200,8,true);
+	m.accelera();
+	m.decelera();
+	m.caratteristicheMotociclo();
+
+Automobile a = new Automobile(200,8);
+	a.accelera();
+	a.decelera();
+	a.caratteristicheAutomobile();
+
+Apercar p = new Apercar(200,8,true);
+	p.accelera();
+	p.decelera();
+	p.caratteristicheApercar();
+System.debug('end');
+//----------------------------------------------
