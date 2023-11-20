@@ -1,0 +1,77 @@
+//-------------------------------------------
+//-----------------Interfaccie----------------------
+public interface Animale {
+	void respirare ();
+}
+//-------------------classi------------------------
+//---------Uccelli-----------
+public virtual class Uccelli implements Animale{
+	public String name;
+    
+    public Uccelli(){}
+    public Uccelli(String name){
+        this.name = name;
+    }
+
+    public virtual  String Verso (){
+        return 'cip cip';
+    }
+    public void DescrizioneUccello(){
+        system.debug('nome Uccello:'+this.name);
+    }
+    public void volare(){
+        system.debug('l\'uccello vola');
+    }
+    public 	void respirare (){
+        system.debug('l\'uccello vive');
+    }
+}
+//--------Pappagallo---------
+public class Pappagallo extends Uccelli{
+	public String specie ;
+    public Pappagallo(){}
+    public Pappagallo(String name ,String specie){
+        super(name);
+        this.specie = specie;
+    }
+    public override String verso(){
+        return 'cra cra';
+    }
+}
+//---------Gufo-------------
+public class Gufo extends Uccelli{
+	public String specie ;
+    public Gufo(){}
+    public Gufo(String name ,String specie){
+        super(name);
+        this.specie = specie;
+    }
+    public override String verso(){
+        return 'uh uh';
+    }
+    public String versoCucciolo(){
+        return 'da piccoli fanno :'+super.verso ();
+    }
+}
+//---------------------AW----------------------
+//Definire una classe Animale che implementi dei metodi che saranno 
+//implementati in una classe più specifica.
+//Tale classe avrà più costruttori, un metodo che permetta di descrivere
+//le istanze della classe , un metodo proprio ed un altro metodo che 
+//restituisca, in modo generico, il verso dell’animale.
+//Definire altre due classi figlie che abbiano i loro attributi specifici,
+//i loro metodi costruttori ed implementino il metodo che restituisce il 
+//verso in modo differente dalla classe padre.
+//Testare il tutto nell’Execute Anonymous.System.debug('Ex 1');
+system.debug('start');
+Uccelli uccelloGenerico = new Uccelli('uccello');
+	system.debug(uccelloGenerico.verso());
+Pappagallo pappagallo = new Pappagallo('uccello','pappagallo');
+	system.debug(pappagallo.verso());
+	pappagallo.respirare();
+Gufo gufo = new Gufo ('uccello','Gufo');
+    system.debug(gufo.versoCucciolo());
+	system.debug(gufo.verso());
+uccelloGenerico.DescrizioneUccello();
+System.debug('end');
+//-------------------------------------------
