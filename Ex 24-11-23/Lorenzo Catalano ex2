@@ -1,0 +1,83 @@
+//1)Si restituiscano nome del corso, voto dello studente x
+//(Ex 1)
+SELECT Course__r.Name, Student_path__c.Grade__c 
+FROM Student_path__c
+WHERE Student__r.Frist_Name__c = 'LORENZO'
+//——————————————————————————————————————— 
+//2)Si restituiscano nome del corso, voto dello studente x
+// con voto almeno 20
+//(Ex 2)
+SELECT Course__r.Name ,Student_path__c.Grade__c
+FROM Student_path__c
+WHERE Student_path__c.Grade__c > 20
+//——————————————————————————————————————— 
+//3)Si restituiscano nome e cognome di tutti gli studenti
+// che abbiano ricevuto come voto massimo almeno 28
+//(Ex 3)
+SELECT Student__c.Frist_Name__c,Student__c.Last_Name__c
+FROM Student__c
+WHERE Student__c.Max_vote__c >= 28
+//——————————————————————————————————————— 
+//4)Si restituiscano nome e cognome di tutti gli studenti 
+//che abbiano ricevuto come voto almeno 20 in un corso x
+//(Ex 4)
+SELECT Student__r.Frist_Name__c,Student__r.Last_Name__c
+FROM Student_path__c
+WHERE Student_path__c.Grade__c >= 20
+AND  Student__r.Frist_Name__c = 'Lorenzo'
+//——————————————————————————————————————— 
+//5)Si restituiscano nome,cognome e voto degli studenti 
+//che hanno in freshman il numero 1 interrogando prima
+// l'oggetto figlio e poi l'oggetto padre
+//(Ex 5 part 1)
+SELECT Student__r.Frist_Name__c,Student__r.Last_Name__c,Student_path__c.Grade__c
+FROM Student_path__c
+WHERE Student__r.ID_number__c = '1'
+//(Ex 5 part 2)
+SELECT Student__c.Frist_Name__C,Student__c.Last_Name__c,(SELECT Student_path__c.Grade__C FROM Student_paths__r)
+FROM Student__c
+WHERE Student__c.ID_number__C = '1'
+//——————————————————————————————————————— 
+//6)Si restituiscano nome,cognome,numero di corsi per 
+//studente, raggruppati per nome E cognome dello
+// studente, che hanno sostenuto almeno un esame
+//(Ex 6)
+SELECT Student__r.Frist_Name__c,Student__r.Last_Name__c,COUNT(Course__r.Name)
+FROM Student_path__c
+GROUP BY Student__r.Frist_Name__c,Student__r.Last_Name__c
+HAVING COUNT(Course__r.ID) > =1
+//——————————————————————————————————————— 
+//7)Si restituiscano nome,cognome,numero di corsi 
+//per studente, raggruppati per nome e cognome dello
+// studente, che hanno sostenuto più di un esame
+//(Ex 7)
+SELECT Student__r.Frist_Name__c,Student__r.Last_Name__c,COUNT(Course__r.Name)
+FROM Student_path__c
+GROUP BY Student__r.Frist_Name__c,Student__r.Last_Name__c
+HAVING COUNT(Course__r.ID) > =1 
+//——————————————————————————————————————— 
+//8)Si restituiscano nome,cognome,numero di corsi 
+//per studente, raggruppati per nome e cognome dello
+// studente, che hanno sostenuto più di un esame
+// ordinati in maniera decrescente
+// (si noti che di default è crescente,cioè non mettendo desc)
+//(Ex 8)
+SELECT Student__r.Frist_Name__c,Student__r.Last_Name__c,COUNT(Course__r.Name)
+FROM Student_path__c
+GROUP BY Student__r.Frist_Name__c,Student__r.Last_Name__c
+HAVING COUNT(Course__r.ID) > =1 
+ORDER BY COUNT(Course__r.Name) DESC
+//——————————————————————————————————————— 
+//9)Si restituiscano id, nome, cognome degli studenti 
+//che non hanno sostenuto esami
+//(Ex 9)
+SELECT Student__r.Frist_Name__c,Student__r.Last_Name__c,Student__r.ID
+FROM Student_path__c
+GROUP BY Student__r.Frist_Name__c,Student__r.Last_Name__c,Student__r.ID
+HAVING COUNT(Course__r.ID) = 0
+//——————————————————————————————————————— 
+//10)Si restituiscano tutti i nomi e i cognomi degli
+// studenti che sono nati nel 2000. //(Ex 10)
+SELECT Student__c.Frist_Name__c,Student__c.Last_Name__c
+FROM Student__c
+WHERE CALENDAR_YEAR(Student__c.Birthdate__c) = 2000
