@@ -1,0 +1,67 @@
+//1. Mostrare il numero di record dell’oggetto
+//attualmente presenti.
+//2. Inserire nel database 5 record
+//3. Mostrare solo i record che presentano un
+//campo x valorizzato
+//4. Aggiornare tutti i record che hanno il campo x impostato su y valorizzando il campo Z con un valore nuovo;
+//5. Ispeziona i record creati di recente
+//nell'organizzazione
+//6. utilizzare il comando di upsert per 
+//inserire/aggiornare un record a scelta
+//7. Ispezionare i record creati recentemente
+//nell’applicazione
+//8. utilizzare il comando di update per aggiornare un contatto a scelta
+//9. Eliminare un record in base al proprio id
+//10. Mostrare il numero di record dell’oggetto 
+//selezionato presenti nella org
+System.debug('Ex 1');
+system.debug('start');
+system.debug('(1)');
+	List<Account>  account =[
+   		SELECT Name
+    	FROM Account
+	];
+	System.debug(account.size());
+system.debug('(2/6)');
+	List<Account> listaAccount = new List<Account> {
+    	new Account(name='Pinco Panco', Industry='Energy'),
+    	new Account(name='Pinco Pallino', Industry='Energy'),
+    	new Account(name='Pluto', Industry='Education', Phone='(39)1254'), // Aggiunta virgola qui
+    	new Account(name='Paperino', Industry='Apparel'),
+    	new Account(name='Topolino', Industry='Education', Phone='(39)000000')
+	};
+	upsert listaAccount;
+system.debug('(3)');
+	List<List<sobject>> ricercaPi = [
+    	Find 'Pi*' 
+    	IN ALL fields 
+		Returning Account(Name,Industry)]; 
+	system.debug(ricercaPi);
+system.debug('(4/8)');
+	List<Account>  accounts =[
+   		SELECT Name,Industry,Phone
+    	FROM Account
+    	WHERE Name LIKE 'ac%'
+	];
+	for(Account account :accounts ){
+ 		account.phone= '123456789';
+	}
+	update accounts;
+system.debug('(5/7)');
+	List<Account>  account5 =[
+   		SELECT Name
+    	FROM Account
+    	
+	];
+	System.debug(account5.size());
+system.debug('(9)');
+Account[] accountEliminati = [SELECT ID, LastName FROM Account WHERE Name Like 'pinco%'];
+delete accountEliminati;
+system.debug('(10)');
+	List<Account>  account10 =[
+   		SELECT Name
+    	FROM Account
+    	
+	];
+	System.debug(account10.size());
+System.debug('end');
