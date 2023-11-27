@@ -18,29 +18,29 @@ system.debug('start');
 system.debug('(1)');
 	List<Account>  account =[
    		SELECT Name
-    	FROM Account
+    		FROM Account
 	];
 	System.debug(account.size());
 system.debug('(2/6)');
 	List<Account> listaAccount = new List<Account> {
-    	new Account(name='Pinco Panco', Industry='Energy'),
-    	new Account(name='Pinco Pallino', Industry='Energy'),
-    	new Account(name='Pluto', Industry='Education', Phone='(39)1254'),
-    	new Account(name='Paperino', Industry='Apparel'),
-    	new Account(name='Topolino', Industry='Education', Phone='(39)000000')
+    		new Account(name='Pinco Panco', Industry='Energy'),
+    		new Account(name='Pinco Pallino', Industry='Energy'),
+    		new Account(name='Pluto', Industry='Education', Phone='(39)1254'),
+    		new Account(name='Paperino', Industry='Apparel'),
+    		new Account(name='Topolino', Industry='Education', Phone='(39)000000')
 	};
 	upsert listaAccount;//INSERT 
 system.debug('(3)');
 	List<List<sobject>> ricercaPi = [
-    	Find 'Pi*' 
-    	IN ALL fields 
+    		Find 'Pi*' 
+    		IN ALL fields 
 		Returning Account(Name,Industry WHERE Industry LIKE 'Ener%')]; 
 	system.debug(ricercaPi);
 system.debug('(4/8)');
 	List<Account>  accounts =[
    		SELECT Name,Industry,Phone
-    	FROM Account
-    	WHERE Name LIKE 'ac%'
+    		FROM Account
+    		WHERE Name LIKE 'ac%'
 	];
 	for(Account account :accounts ){
  		account.phone= '123456789';
@@ -49,16 +49,21 @@ system.debug('(4/8)');
 system.debug('(5/7)');
 	List<Account>  account5 =[
    		SELECT Name
-    	FROM Account  	
+    		FROM Account  	
 	];
 	System.debug(account5.size());
 system.debug('(9)');
-Account[] accountEliminati = [SELECT ID, Name FROM Account WHERE Name Like 'pinco%'];
-delete accountEliminati;
+	Account[] accountEliminati = [
+		SELECT ID, Name 
+		FROM Account 
+		WHERE Name 
+		Like 'pinco%'
+	];
+	delete accountEliminati;
 system.debug('(10)');
 	List<Aggregateresult>  account10 =[
    		SELECT COUNT(Name)
-    	FROM Account
+    		FROM Account
 	];
 	System.debug(account10);
 System.debug('end');
