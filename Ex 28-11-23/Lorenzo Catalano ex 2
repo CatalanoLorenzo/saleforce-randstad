@@ -15,7 +15,7 @@ trigger candidateTrigger on Candidate__c (before insert,after insert,after delet
     if(Trigger.isAfter & Trigger.isDelete){
         for(Candidate__c can : trigger.old){
         	system.debug('Un Candidato è stato eliminato');
-            system.debug('Candidato :'+ Trigger.oldMap.get(can.ID).frist_name__C + ' ' + Trigger.oldMap.get(can.ID).last_name__c);
+            system.debug('Candidato :'+ can.frist_name__C + ' ' + can.last_name__c);
         }
     }
 }
