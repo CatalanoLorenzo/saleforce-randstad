@@ -1,0 +1,4 @@
+/*Definire un trigger che mostri:
+1. un messaggio nel contesto precedente l'inserimento del candidato
+2. un messaggio che notifichi l' inserimento di un nuovo candidato e mostri il suo nome
+3. un messaggio che notifichi l'eliminazione di un candidato con il nome del candidato eliminato*/
