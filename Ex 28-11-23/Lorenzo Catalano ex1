@@ -1,0 +1,20 @@
+//Creare un trigger che notifichi l'aggiornamento di
+//un record dell’oggetto Account tenendo traccia dei
+//dati dell’account che possono coinvolgere
+//l'aggiornamento : come nome e numero di telefono.
+trigger accountTrigger on Account (before update,after update) {
+	if (Trigger.isBefore & Trigger.isUpdate){
+        system.debug('sono nel contesto precedente l\' aggiornamento');
+        for(Account acc : Trigger.new){
+            system.debug('Nome prima dell\'aggiornamento: ' + acc.Name);
+            system.debug('Numero di Telefono prima dell\'aggiornamento ' + acc.Phone);
+        }
+    } 
+    if(Trigger.isAfter & Trigger.isUpdate){
+        for(Account acc : Trigger.new){
+    		  system.debug('aggiornamento avenuto');
+        	system.debug('Nome:'+ Trigger.oldMap.get(acc.ID).Name +'->'+ acc.Name);
+          system.debug('Nome:'+ Trigger.oldMap.get(acc.ID).Phone +'->'+ acc.Phone);
+        }
+    }
+}
