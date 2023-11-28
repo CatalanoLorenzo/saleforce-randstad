@@ -11,10 +11,10 @@ trigger accountTrigger on Account (before update,after update) {
         }
     } 
     if(Trigger.isAfter & Trigger.isUpdate){
-        for(Account acc : Trigger.old){
+        for(Account acc : Trigger.new){
     		  system.debug('aggiornamento avenuto');
         	system.debug('Nome:'+ Trigger.oldMap.get(acc.ID).Name +'->'+ acc.Name);
-          system.debug('Nome:'+ Trigger.oldMap.get(acc.ID).Phone +'->'+ acc.Phone);
+          system.debug('Telefono:'+ Trigger.oldMap.get(acc.ID).Phone +'->'+ acc.Phone);
         }
     }
 }
