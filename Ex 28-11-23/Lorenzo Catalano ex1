@@ -1,7 +1,7 @@
-//Creare un trigger che notifichi l'aggiornamento di
-//un record dell’oggetto Account tenendo traccia dei
-//dati dell’account che possono coinvolgere
-//l'aggiornamento : come nome e numero di telefono.
+/*Creare un trigger che notifichi l'aggiornamento di
+un record dell’oggetto Account tenendo traccia dei
+dati dell’account che possono coinvolgere
+l'aggiornamento : come nome e numero di telefono.*/
 
 //reazione di un trigger con sintassi  parola chiave 'trigger' + nome del Trigger 'accountTrigger' +
 //parola chiave ON + sObject che attiva il Trigger 'Account' 
