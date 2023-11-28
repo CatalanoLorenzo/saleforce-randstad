@@ -5,13 +5,13 @@
 trigger accountTrigger on Account (before update,after update) {
 	if (Trigger.isBefore & Trigger.isUpdate){
         system.debug('sono nel contesto precedente l\' aggiornamento');
-        for(Account acc : Trigger.new){
+        for(Account acc : Trigger.old){
             system.debug('Nome prima dell\'aggiornamento: ' + acc.Name);
             system.debug('Numero di Telefono prima dell\'aggiornamento ' + acc.Phone);
         }
     } 
     if(Trigger.isAfter & Trigger.isUpdate){
-        for(Account acc : Trigger.new){
+        for(Account acc : Trigger.old){
     		  system.debug('aggiornamento avenuto');
         	system.debug('Nome:'+ Trigger.oldMap.get(acc.ID).Name +'->'+ acc.Name);
           system.debug('Nome:'+ Trigger.oldMap.get(acc.ID).Phone +'->'+ acc.Phone);
