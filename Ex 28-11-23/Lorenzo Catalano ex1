@@ -2,19 +2,30 @@
 //un record dell’oggetto Account tenendo traccia dei
 //dati dell’account che possono coinvolgere
 //l'aggiornamento : come nome e numero di telefono.
+
+//reazione di un trigger con sintassi  parola chiave 'trigger' + nome del Trigger 'accountTrigger' +
+//parola chiave ON + sObject che attiva il Trigger 'Account' 
+//+ ( + stato di attivazione del trigger before update,after update +)*/
 trigger accountTrigger on Account (before update,after update) {
+	//condizione che controlla lo stato di attivazione essendoci piu stati di attivazione prima dell'aggiornamento
 	if (Trigger.isBefore & Trigger.isUpdate){
-        system.debug('sono nel contesto precedente l\' aggiornamento');
-        for(Account acc : Trigger.old){
-            system.debug('Nome prima dell\'aggiornamento: ' + acc.Name);
-            system.debug('Numero di Telefono prima dell\'aggiornamento ' + acc.Phone);
-        }
-    } 
-    if(Trigger.isAfter & Trigger.isUpdate){
-        for(Account acc : Trigger.new){
-    		  system.debug('aggiornamento avenuto');
-        	system.debug('Nome:'+ Trigger.oldMap.get(acc.ID).Name +'->'+ acc.Name);
-          system.debug('Telefono:'+ Trigger.oldMap.get(acc.ID).Phone +'->'+ acc.Phone);
-        }
-    }
+		//mostro in console un messaggio per segnalare lo stato del trigger
+        	system.debug('sono nel contesto precedente l\' aggiornamento');
+		//ciclo per i record degli account che hanno scaturato il trigger 'Trigger.old'
+        	for(Account acc : Trigger.old){
+			//mostro in console i valori precedente la modifica
+			system.debug('Nome prima dell\'aggiornamento: ' + acc.Name);
+            		system.debug('Numero di Telefono prima dell\'aggiornamento ' + acc.Phone);
+        	}
+	} 
+	//condizione che controlla lo stato di attivazione dopo l'aggiornamento
+	if(Trigger.isAfter & Trigger.isUpdate){
+		//ciclo per i record degli account che hanno scaturato il trigger 'Trigger.new'
+        	for(Account acc : Trigger.new){
+			//mostro in console i valori precedente  e i valori successivi la modifica
+	    		system.debug('aggiornamento avenuto');
+        		system.debug('Nome:'+ Trigger.oldMap.get(acc.ID).Name +'->'+ acc.Name);
+         		system.debug('Telefono:'+ Trigger.oldMap.get(acc.ID).Phone +'->'+ acc.Phone);
+        	}
+	}
 }
