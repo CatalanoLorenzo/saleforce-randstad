@@ -2,3 +2,20 @@
 1. un messaggio nel contesto precedente l'inserimento del candidato
 2. un messaggio che notifichi l' inserimento di un nuovo candidato e mostri il suo nome
 3. un messaggio che notifichi l'eliminazione di un candidato con il nome del candidato eliminato*/
+trigger candidateTrigger on Candidate__c (before insert,after insert,after delete) {
+    if(Trigger.isBefore & Trigger.isInsert){
+        system.debug('Stai per inserire un nuovo Candidato');
+    }
+	if(Trigger.isAfter & Trigger.isInsert){
+        for(Candidate__c can : trigger.new){
+        	system.debug('Un nuovo Candidato è stato inserito');
+            system.debug('Candidato :'+ can.frist_name__c + ' ' + can.last_name__C);
+        }
+    }
+    if(Trigger.isAfter & Trigger.isDelete){
+        for(Candidate__c can : trigger.new){
+        	system.debug('Un Candidato è stato eliminato');
+            system.debug('Candidato :'+ Trigger.oldMap.get(can.ID).frist_name__C + ' ' + Trigger.oldMap.get(can.ID).last_name__c);
+        }
+    }
+}
