@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex1 1/12/2023</title>
+        <style>
+            /* #region Container1 */
+                .container1{
+                    padding-top: 1rem;
+                    padding-bottom: 1rem;
+                    border: 2px solid blue;
+                    background-color: rgb(19, 77, 57);
+                    width: 10%;
+                    border-radius: 10px;
+                }
+                .container1 a{
+                    color: white;
+                }
+            /* #endregion Container1 */
+            /* #region Container2 */
+                .container2{
+                    display: flex;
+                    width: 250px;
+                    aspect-ratio: 1/1;
+                    border: 1px solid black;
+                    background-color: antiquewhite;
+                    border-radius: 10px;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .container2 .son{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100px;
+                    aspect-ratio: 1/1;
+                    border: 5px solid deeppink;
+                    padding: 1rem;
+                    font-size: 1.2rem;
+                }
+            /* #endregion Container2 */
+            /* #region Container3 */
+                .container3{
+                    background-color: rgb(40, 95, 206);
+                    padding: 1rem;
+                }
+                .row1{
+                    width: 100%;
+                }
+                 .col1 ,.col2,.col{
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    gap: 1rem;       
+                    margin-bottom: 1rem;
+                    }
+                    
+                    .col1  .box{
+                    background-color: rosybrown;
+                    }
+                    .col2  .box{
+                    background-color: rgb(166, 145, 145);
+                    }  
+                    .box{
+                    padding: 1rem;
+                    font-size: 72px;
+                    border: 1px solid black;
+                    width: 100px;
+                    text-align: center;
+                }
+                .row2{
+                    width: 100%;
+                    display: flex;
+                    gap: 1rem;
+                }
+                .row2 .col{
+                    background-color: blueviolet;
+                    height: 100px;
+                    align-items: center;
+                    color: white;
+                }
+            /* #endregion Container3 */
+
+    </style>
+    </head>
+    <body>
+        <!-- first IMG -->
+        <div class="container1">
+            <i><a href="Home">Home</a></i>
+        </div>
+        <div class="container1">
+            <i><a href="About_Us">About us</a></i>
+        </div>
+        <div class="container1">
+            <i><a href="Products">Products</a></i>
+        </div>
+        <div class="container1">
+            <i><a href="Contact_Us">Contact Us</a></i>
+        </div>
+        <!-- second IMG -->
+        <div class="container2">
+            <div class="son">
+                Sarò sempre centrato rispetto al blocco padre
+            </div>
+        </div>
+        <!-- third IMG -->
+        <div class="container3">
+            <div class="row1">
+                <div class="col1">
+                    <div class="box">A</div>
+                    <div class="box">B</div>
+                    <div class="box">C</div>
+                </div>
+                <div class="col2">
+                    <div class="box">1</div>
+                    <div class="box">2</div>
+                    <div class="box">3</div>
+                </div>
+            </div>
+            <div class="row2">
+                <div class="col">1A</div>
+                <div class="col">2B</div>
+                <div class="col">3C</div>
+
+            </div>
+        </div>
+    </body>
+</html>
