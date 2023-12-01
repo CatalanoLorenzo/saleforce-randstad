@@ -1,0 +1,28 @@
+//Si crei un trigger che sollevi un errore se si prova 
+//a cancellare un contact collegato ad un account.
+//Il messaggio di errore verrà mostrato nel log ma,
+//per una migliore esperienza utente, si provi ad 
+//implementare il metodo .addError('scrivi qui il messaggio di errore’).
+
+trigger ContactTrigger on Contact (before delete) {
+    // creo un set di ID chiamandolo accountIDs 
+    Set<Id> accountIDs = new Set<Id>();
+    //ciclo nella collection del trigger e mi recupero il singolo elemento
+    //e lo vado a salvare del set cosi da non avere doppioni
+    for (Contact c : Trigger.old) {
+        accountIDs.add(c.AccountId);
+    }
+    //mi recupero tramite chiamata SOQL la lista di ID di Account ma solo quelli contenuti nel set
+    List<Account> relatedAccounts = [SELECT Id FROM Account WHERE Id IN :accountIDs];
+
+    //se la lista di collection è vuota->
+    if (!relatedAccounts.isEmpty()) {
+        //ciclo nella collection del trigger e mi recupero il singolo elemento
+        for (Contact c : Trigger.old) {
+            //mando in cosole un messaggio  e un errore
+            system.debug('stai provando ad eliminare un contatto, prova ad eliminare un account');
+            c.addError('Impossibile eliminare il contatto associato all'account. ' + c.id);
+        }
+
+    }
+}
