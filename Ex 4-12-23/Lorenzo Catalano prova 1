@@ -1,0 +1,67 @@
+<!-- prova 1 
+<apex:page>
+	<apex:pageBlock title="Primo blocco">
+		<apex:pageBlockSection title="prima sezione">
+			<apex:pageBlockSectionItem>
+                Nunzio
+            </apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem>Salvatore</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem>Gennaro</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem>Patrizio</apex:pageBlockSectionItem>
+		</apex:pageBlockSection>
+	</apex:pageBlock>
+	<apex:pageBlock title="Secondo blocco">
+        <apex:pageBlockSection title="seconda sezione">
+            <apex:pageBlockSectionItem>Vincenzo</apex:pageBlockSectionItem>
+			<apex:pageBlockSectionItem>Marianna</apex:pageBlockSectionItem>
+			<apex:pageBlockSectionItem>Luca</apex:pageBlockSectionItem>
+		</apex:pageBlockSection>
+	</apex:pageBlock>
+</apex:page>-->
+<!-- prova 2
+<apex:page>
+	<apex:pageBlock>
+		<apex:pageMessage Summary="Primo tipo" severity="info" />
+		<apex:pageMessage Summary="Secondo tipo" severity="confirm" strength="1"/>
+		<apex:pageMessage Summary="Terzo tipo" severity="info" strength="1"/>
+		<apex:pageMessage Summary="Quarto tipo" severity="warning" strength="2"/>
+		<apex:pageMessage Summary="Quinto tipo" severity="error" strength="3"/>
+	</apex:pageBlock>
+</apex:page> -->
+<!-- prova 3
+<apex:page id="thePage">
+	<apex:tabPanel switchType="client" >
+		<apex:tab label="Home" name="home1" id="tabOne">
+            La nostra azienda opera su tutto il territorio nazionale con
+            una struttura operativa articolata su tre sedi ognuna delle quali
+            dotata di attrezzature specifiche.
+		</apex:tab>
+		<apex:tab label="Students" name="students1" id="tabTwo">
+            Una delle peculiarità che ci contraddistingue e ci fa apprezzare
+            sul mercato è l’affidabilità e la correttezza nello svolgere la
+            nostra attività.
+		</apex:tab>
+	</apex:tabPanel>
+</apex:page> -->
+<!-- prova 4
+<apex:page>
+	<apex:toolbar id="theToolbar">
+		<apex:outputText value="Sample Toolbar"></apex:outputText>
+			<apex:toolbarGroup id="theToolbarlinks">
+				<apex:outputLink value="http://www.bcsoft.net/">
+					BCSoft
+				</apex:outputLink>
+				<apex:outputLink value="http://www.salesforce.com/">
+					Salesforce
+				</apex:outputLink>
+			</apex:toolbarGroup>
+			<apex:toolbarGroup location="right" id="theToolbargrp2">
+				<apex:form>
+					<apex:inputText id="theInputText">
+						Enter text:
+                    </apex:inputText>
+				<apex:commandButton value="Save" id="theCommandLink"/>
+			</apex:form>
+		</apex:toolbarGroup>
+	</apex:toolbar>
+</apex:page> -->
