@@ -1,0 +1,34 @@
+<apex:page id="PageForm">
+    <apex:tabPanel switchType="client">
+        <apex:tab id="Tabform" label="Tab Form" name="Tabform">
+            <apex:form>
+                <apex:toolbar>
+                    <apex:outputText>Link Utili</apex:outputText>
+                    <apex:toolbarGroup>
+                        <apex:outputLink value="www.link1.it">Link1</apex:outputLink>
+                        <apex:outputLink value="www.link2.it">Link2</apex:outputLink>
+                    </apex:toolbarGroup>
+                    <apex:toolbarGroup location="right">
+                        <apex:inputText id="ricerca"> Cerca..</apex:inputText>
+                        <apex:commandButton value="cerca" id="buttonRicerca" />
+                    </apex:toolbarGroup>
+                </apex:toolbar>
+                <apex:panelBar>
+                    <apex:panelBarItem>
+                        <apex:pageBlock>
+                            <apex:pageBlockButtons>
+                                <apex:commandButton value="invia" id="buttonForm" />
+                            </apex:pageBlockButtons>
+                            <apex:outputLabel>Nome:</apex:outputLabel>
+                            <apex:inputText id="name" />
+                            <apex:outputLabel>Cognome:</apex:outputLabel>
+                            <apex:inputText id="lastName" />
+                            <apex:outputLabel>Lettera di presentazione:</apex:outputLabel>
+                            <apex:inputTextarea />
+                        </apex:pageBlock>
+                    </apex:panelBarItem>
+                </apex:panelBar>
+            </apex:form>
+        </apex:tab>
+    </apex:tabPanel>
+</apex:page>
