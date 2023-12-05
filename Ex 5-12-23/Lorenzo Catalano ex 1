@@ -1,0 +1,12 @@
+<apex:page standardController="Account" id="Ex1" recordSetVar="acc">
+   <apex:pageBlock title="Lista di nomi">
+       <apex:form>
+           <apex:pageBlockButtons>
+           		<apex:commandButton value="Delete the record" action="{!delete}"/>
+           </apex:pageBlockButtons>
+       </apex:form>
+   		<apex:dataList value="{!acc}" var="a">
+            Name:{!a.Name} , CleanStatus: {!a.CleanStatus} , Description : {!a.description}
+        </apex:dataList>/>
+   </apex:pageBlock>
+</apex:page>
