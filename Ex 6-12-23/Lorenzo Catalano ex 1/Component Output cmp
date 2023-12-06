@@ -1,0 +1,10 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+  <aura:attribute name="numeroPresenti" type="String" default=""></aura:attribute>
+  <aura:attribute name="numeroLezione" type="String" ></aura:attribute>
+	<div>
+    <h2>Benvenuto su SalesForce</h2>
+    <p>
+    Oggi sono presenti <span class="nPresenti" >{!v.numeroPresenti}</span>
+    discenti ed è la <span class="nLezione">{!v.numeroLezione}</span>esima Lezione</p>
+  </div>
+</aura:component>
