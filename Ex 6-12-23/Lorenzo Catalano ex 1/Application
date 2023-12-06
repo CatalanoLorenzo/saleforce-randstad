@@ -1,0 +1,6 @@
+<aura:application >
+	<c:EsercizioUnoOutput numeroPresenti="4" numeroLezione="17"></c:EsercizioUnoOutput>
+    <c:EsercizioUnoOutput numeroPresenti="4" numeroLezione="18"></c:EsercizioUnoOutput>
+	<c:EsercizioUnoOutput numeroPresenti="4" numeroLezione="19"></c:EsercizioUnoOutput>
+	<c:EsercizioUnoOutput numeroPresenti="4" numeroLezione="20"></c:EsercizioUnoOutput>
+</aura:application>
