@@ -1,0 +1,30 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global">
+        <aura:attribute name="Name" type="String" />
+        <aura:attribute name="SLAExpirationDate__c" type="Date" />
+        <aura:attribute name="TypeArray" type="String[]" default="Prospect,Customer - Direct,Customer - Channel,Channel Partner / Reseller,Installation Partner,Technology Partner,Other" />
+        <aura:attribute name="Type" type="String" default="" />
+        <aura:attribute name="TerminiDiCondizione" type="Boolean" />
+        <aura:attribute name="Active" type="String" />
+    <lightning:card footer="Fine Form" title="Form">
+        <lightning:input label="Inserisci il tuo nome: " name="Name" value="{!v.Name}" />
+        <lightning:input label="Inserisci la data: " name="SLAExpirationDate__c" value="{!v.SLAExpirationDate__c}" />
+        <lightning:select label="Seleziona il Type?" name="Type" value="{!v.Type}">
+            <option value="">Scegline uno...</option>
+            <aura:iteration items="{!v.TypeArray}" var="e">
+                <option value="{!e}" text="{!e}"></option>
+            </aura:iteration>
+        </lightning:select>
+        <lightning:select label="È attivo?" name="Active" value="{!v.Active}">
+            <option value="">Scegline uno...</option>
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+        </lightning:select>
+        <lightning:input label="Accetti i termini e condizioni?" name="TerminiDiCondizione" type="checkbox" value="{!v.TerminiDiCondizione}" />
+		<aura:if isTrue="{!not(v.TerminiDiCondizione)}">
+   			 Hai dimenticato di spuntare la checkbox
+		</aura:if>    
+    	<div>
+        	<lightning:button label="Submit"></lightning:button>
+   		</div>
+    </lightning:card>
+</aura:component>
