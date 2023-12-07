@@ -1,0 +1,6 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<aura:attribute name="text" type="String" default=""></aura:attribute>
+    <h1>{!v.text}</h1>
+    <lightning:button label="sii carico oggi" onclick="{!c.setH1}" ></lightning:button>
+    <lightning:button label="oggi sarà una gran giornata!"  onclick="{!c.setH1}" ></lightning:button>
+</aura:component>
