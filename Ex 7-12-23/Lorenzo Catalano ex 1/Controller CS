@@ -1,0 +1,6 @@
+({
+	setH1 : function(component, event, helper) {
+		let valueTrigger = event.getSource();
+        component.set("v.text", valueTrigger.get("v.label"));	
+    }
+})
