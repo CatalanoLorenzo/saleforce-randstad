@@ -1,0 +1,28 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<aura:attribute type="String" name="name"></aura:attribute>
+	<aura:attribute type="String" name="lastName"></aura:attribute>
+	<aura:attribute type="String" name="email"></aura:attribute>
+	<aura:attribute type="date" name="dateComp"></aura:attribute>
+    <aura:attribute name="hourSet" type="string[]" default="mattina,pomeriggio,sera" />
+    <aura:attribute name="hoursSelect" type="string" />
+    
+    <lightning:input type="string" value="{!v.name}" label="scrivi il tuo nome"></lightning:input>
+    <lightning:input type="String" value="{!v.lastName}" label="scrivi il tuo cognome"></lightning:input>
+    <lightning:input type="email" value="{!v.email}" label="scrivi la tua email"></lightning:input>
+    <lightning:input type="date" value="{!v.dateComp}" label="scegli la data di compilazione" required ="true"></lightning:input>
+	<lightning:select value="{!v.hoursSelect}" label="In che fascia oraria stai compilando il form?">
+            <option value="">Esprimi una preferenza:</option>
+            <aura:iteration items="{!v.hourSet}" var="h">
+                <option value="{!h}" text="{!h}"></option>
+            </aura:iteration>
+	</lightning:select>
+    <lightning:button  label="clicca" onclick="{!c.alert}"></lightning:button>
+
+    <c:MdueCCheckbox></c:MdueCCheckbox>
+    
+    <c:MdueCInfoLezioni numero=" 10 gennaio" studenti=" 9" numLezione=" 14" ></c:MdueCInfoLezioni>
+    <c:MdueCInfoLezioni numero=" 11 gennaio" studenti=" 8" numLezione=" 15" ></c:MdueCInfoLezioni>
+    <c:MdueCInfoLezioni numero=" 12 gennaio" studenti=" 7" numLezione=" 16" ></c:MdueCInfoLezioni>
+    <c:MdueCInfoLezioni numero=" 13 gennaio" studenti=" 6" numLezione=" 17" ></c:MdueCInfoLezioni>
+
+</aura:component>
