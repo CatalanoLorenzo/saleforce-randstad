@@ -1,0 +1,20 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<aura:attribute type="date" name="dateB"></aura:attribute>
+    <aura:attribute type="String" name="preference" default=""></aura:attribute>
+
+    <p>Inserisci la data del tuo compleanno</p>
+    <lightning:input type="date" value="{!v.dateB}"></lightning:input>
+    <lightning:button label="Calcola" onclick="{!c.calc}" ></lightning:button>
+    <p>Wow mancano solo <span id="missingDay"></span> giorni al tuo compleanno</p>
+    
+    
+    <p>Cosa ti piacerebbe ricevere ?</p>
+    <lightning:select name="preference" value="{!v.preference}" onchange="{!c.choise}" >
+    	<option value="">Espimi una preferenza </option>
+        <option value="1">viaggio </option>
+    	<option value="2">regalo</option>
+        <option value="3">sorpresa</option>
+	</lightning:select>
+    <p id="messagge"></p>
+
+</aura:component>
