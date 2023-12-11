@@ -1,0 +1,5 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<aura:attribute type="Boolean" name="checkbox" default="false"/>
+    <lightning:input type="checkbox" label="Conferma la firma" value="{!v.checkbox}" onchange="{!c.check}"></lightning:input>
+    <p id="checkboxInfo" style="color:red">Conferma la firma</p>
+</aura:component>
