@@ -1,88 +1,59 @@
-1)MVC e Salesforce: descrivine il legame.
-MVC è l’acronimo di Model View Controller ed è un modello di architettura chesuddivide l’architettura  in tre tipi di componenti.
-il controller invia comandi alla vista(View) associata, per modificare la presentazione della vista del modello .
-Può anche inviare comandi al modello per aggiornare lo stato di quest’ultimo.
-La View interagiscono con il controller attraverso i componenti che gli trasferiscono i dati e specificano cosa succede quando l'utente interagisce.
-il Model notifica alle viste(View) e ai
-controller associati quando si è verificato un
-cambiamento nel suo stato.
-2)Quali tipi di input esistono per un componente? Se ne indichino i più noti.
-Input di tipo text, number,email,password,button,textarea,hiden e number
-3)Che cos'è il Lightning App Builder?
-Lightning App Builder è una applicazione della piattaforma salsforce che permette di realizzare le interfacce  personalizzate utilizzando solo componenti lightning necessari 
-4) Cosa si intende per Controller lato Client? E per Controller lato Server? Se ne indichino le differenze.
-Controller lato Client-Side sono controller con metodi in JS che rispondano a eventi come interazioni
-dell'utente o eventi del ciclo di vita della pagina invece i Controller lato Server-Side eseguono azioni eseguite sul server ed 
-elaborano le interazioni col database sono scritti in APEX
-5)In che modo si abilita l'accesso al metodo di un controller server side?
-Per abilitare l’accesso ad un metodo del controller server side bisogna utilizzare @AuraEnabled prima della dichiarazione del metodo pero c’è bisogno che il metodo sia di tipi static e se restituisce un oggetto allora i metodi dell’istanza che recuperano l’oggetto devono essere
- public
-6)Descrivi in breve il Rendering Lifecycle.
-le quattro fasi del ciclo di 
-vita di redering di un aura:component sono il render che consente di aggiornare un componente o generare un evento
-dopo la costruzione del componente, ma prima del rendering;il rerender che  eseguire il rendering del corpo del componente;il afterRender che consente 
- all'utente di interagire con l'albero DOM
-dopo che il servizio di rendering del framework ha inserito
-elementi DOM e  l’unrender
-7)Cosa sono gli Aura Component? Descrivine gli utilizzi.
-Gli aura component sono un insieme di componenti pronti all’uso che si utilizzano nel LightningComponentFramework e hanno una architettura basata sugli eventi e un framework ottimizzato per le prestazioni. Il loro principale vantaggio e che sono riutilizzabili e componibili e posso includere linguaggi come html css js o qualsiasi altro linguaggio abilitato per il WEB
-8)Descrivi almeno tre componenti di Visualforce.
-<apex:pageMessage>
-Questo componente deve essere utilizzato
-per presentare messaggi personalizzati di errore o avviso
-<apex:pageBlockButtons>
-E un contenitore che contiene Tag <apex:
-commandbutton> e serve a genere bottoni
-sopra e sotto ad una section in stile
-Saleforce
-<apex:commandButton>
-Tag per cerare un input di tipo bottone col
-stile si Salesforce
-<apex:pageblock>
-Un tag che crea un'area all'interno della
-pagina in cui è possibile creare più sezioni 
-<apex:pageBlockSection>
-Questo tag creare una sezione all'interno di
-un blocco di pagina <apex:pageblock>.
-<apex:page>
-Il tag di base che crea una pagina
-Visualforce. Può essere utilizzato solo una
-volta in una pagina e tutti i tag
-visualforce devono essere racchiusi in
-questo tag.
-9)Cosa sono i controller di elenco standard in Visualforce?
-I controller di elenco standard consentono di
-creare pagine Visualforce in grado di
-visualizzare o agire su un set di record.
-Per associare un Standard List Controllers
-alla pagina bisogna usare l’attributorecordSetVar nel componente apex:page e
-come valore il nome della lista
-10) Cosa è la Salesforce Lightning Design System?
-Salesforce Lightning Design System è una libreria di stili completa propria di salesforce
-11)Cosa sono gli aura:attribute?In che modo si accede ad essi?
-sono come variabili scritte nel markup del componente  e sono tipo tipizzato  per potervi accedere  bisogna utilizzare il fornitore di valore
-12) Cosa è il “fornitore di valore”?
-Il fornitore di valore è metodo che consente di raggruppare, incapsulare e accedere ai dati correlati.la sua espressione è “v.” e lo si utilizza all’interno dei delimitatori di
-espressione {! ... }
- 
-13)Cosa si intende per Aura:If?
-è un componente Aura che consente di utilizzare il condizionale if all’interno del markup
-14)A cosa servono gli Helper?
-Helper è una classe progettata per avere codice condiviso con il  render e controller.
-Le funzioni Helper migliorano il riutilizzo del codice e spostano la logica JavaScript dal controller lato client laddove possibile.
-15)A cosa serve la funzione setParams()?
-È una funzione che permette di condividere i parametri richiesti da una funzione lato server-Side dal lato clint-Side
-16) A cosa serve la funzione setCallback()?
-É una funzione utilizzata dal lato client-side che riceve dal lato server-side una “chiamata di ritorno” di un set di dati dove potremmo avere uno stato della risposta e una risposta con i dati recuperati dal server-side
-17) Cos’è Visualforce?
-Visualforce è il framework di interfaccia utente(di tipo MVC) basato su componenti della piattaforma salesforce
-18) Cosa sono i controller di elenco standard?
-I controller di elenco standard consentono di
-creare pagine Visualforce in grado di
-visualizzare o agire su un set di record.
-Per associare un Standard List Controllers
-alla pagina bisogna usare l’attributorecordSetVar nel componente apex:page e
-come valore il nome della lista
-19)Cos’è un Renderer?
-È un componente di un di un build di un componente  ed è scritto in nel file Renderer.js
-20)A cosa serve la keyword “with sharing”?serve ad indicare che quella classe apex è un controller serverside
+1) MVC e Salesforce: descrivine il legame.**
+1] MVC è l'acronimo di Model View Controller ed è un modello di architettura che suddivide l’architettura in tre tipi di componenti. Il controller invia comandi alla vista (View) associata, per modificare la presentazione della vista del modello. Può anche inviare comandi al modello per aggiornare lo stato di quest’ultimo. La View interagisce con il controller attraverso i componenti che trasferiscono i dati e specificano cosa succede quando l'utente interagisce. Il Model notifica alle viste (View) e ai controller associati quando si è verificato un cambiamento nel suo stato.
+
+2) Quali tipi di input esistono per un componente? Se ne indichino i più noti.**
+2] Input di tipo text, number, email, password, button, textarea e hidden.
+
+3) Che cos'è il Lightning App Builder?**
+3] Lightning App Builder è un'applicazione della piattaforma Salesforce che permette di realizzare interfacce personalizzate utilizzando solo i componenti Lightning necessari.
+
+4) Cosa si intende per Controller lato Client? E per Controller lato Server? Se ne indichino le differenze.**
+4] Controller lato Client-Side sono controller con metodi in JS che rispondono a eventi come interazioni dell'utente o eventi del ciclo di vita della pagina. I Controller lato Server-Side eseguono azioni eseguite sul server ed elaborano le interazioni col database sono scritti in APEX.
+
+5) In che modo si abilita l'accesso al metodo di un controller server side?**
+5] Per abilitare l’accesso ad un metodo del controller server side bisogna utilizzare @AuraEnabled prima della dichiarazione del metodo però c’è bisogno che il metodo sia di tipo static e, se restituisce un oggetto, i metodi dell’istanza che recuperano l’oggetto devono essere public.
+
+6) Descrivi in breve il Rendering Lifecycle.**
+6] Le quattro fasi del ciclo di vita di rendering di un aura:component sono: render che consente di aggiornare un componente o generare un evento dopo la costruzione del componente, ma prima del rendering; rerender che esegue il rendering del corpo del componente; afterRender che consente all'utente di interagire con l'albero DOM dopo che il servizio di rendering del framework ha inserito elementi DOM e unrender.
+
+7) Cosa sono gli Aura Component? Descrivine gli utilizzi.**
+7] Gli aura component sono un insieme di componenti pronti all’uso che si utilizzano nel LightningComponentFramework e hanno una architettura basata sugli eventi e un framework ottimizzato per le prestazioni. Il loro principale vantaggio è che sono riutilizzabili e componibili e possono includere linguaggi come HTML CSS JS o qualsiasi altro linguaggio abilitato per il WEB.
+
+8) Descrivi almeno tre componenti di Visualforce.**
+8] <apex:pageMessage> Questo componente deve essere utilizzato per presentare messaggi personalizzati di errore o avviso. <apex:pageBlockButtons> E un contenitore che contiene Tag <apex:commandbutton> e serve a generare bottoni sopra e sotto ad una section in stile Saleforce. <apex:commandButton> Tag per creare un input di tipo bottone col stile di Salesforce <apex:pageblock> Un tag che crea un'area all'interno della pagina in cui è possibile creare più sezioni <apex:pageBlockSection> Questo tag crea una sezione all'interno di un blocco di pagina <apex:pageblock>. <apex:page> Il tag di base che crea una pagina Visualforce. Può essere utilizzato solo una volta in una pagina e tutti i tag Visualforce devono essere racchiusi in questo tag.
+
+9) Cosa sono i controller di elenco standard in Visualforce?**
+9) I controller di elenco standard consentono di creare pagine Visualforce in grado di visualizzare o agire su un set di record. Per associare un Standard List Controllers alla pagina bisogna usare l’attributo recordSetVar nel componente apex:page e come valore il nome della lista.
+
+10) Cosa è la Salesforce Lightning Design System?**
+10] Salesforce Lightning Design System è una libreria di stili completa propria di Salesforce.
+
+11) Cosa sono gli aura:attribute? In che modo si accede ad essi?**
+11] Sono come variabili scritte nel markup del componente e sono tipizzate. Per accedervi, bisogna utilizzare il fornitore di valore.
+
+12) Cosa è il “fornitore di valore”?**
+12] Il fornitore di valore è un metodo che consente di raggruppare, incapsulare e accedere ai dati correlati. La sua espressione è “v.” e lo si utilizza all’interno dei delimitatori di espressione {! ... }.
+
+13) Cosa si intende per Aura:If?**
+13] È un componente Aura che consente di utilizzare il condizionale if all’interno del markup.
+
+14) A cosa servono gli Helper?**
+14] Helper è una classe progettata per avere codice condiviso con il render e controller. Le funzioni Helper migliorano il riutilizzo del codice e spostano la logica JavaScript dal controller lato client laddove possibile.
+
+15) A cosa serve la funzione setParams()?**
+15] È una funzione che permette di condividere i parametri richiesti da una funzione lato server-Side dal lato client-Side.
+
+16) A cosa serve la funzione setCallback()?**
+16] È una funzione utilizzata dal lato client-side che riceve dal lato server-side una “chiamata di ritorno” di un set di dati dove potremmo avere uno stato della risposta e una risposta con i dati recuperati dal server-side.
+
+17) Cos’è Visualforce?**
+17) Visualforce è il framework di interfaccia utente (di tipo MVC) basato su componenti della piattaforma Salesforce.
+
+18) Cosa sono i controller di elenco standard?**
+18) I controller di elenco standard consentono di creare pagine Visualforce in grado di visualizzare o agire su un set di record. Per associare un Standard List Controllers alla pagina bisogna usare l’attributo recordSetVar nel componente apex:page e come valore il nome della lista.
+
+19) Cos’è un Renderer?**
+19] È un componente di un build di un componente ed è scritto nel file Renderer.js.
+
+20) A cosa serve la keyword “with sharing”?
+20] Serve ad indicare che quella classe apex è un controller server-side.
