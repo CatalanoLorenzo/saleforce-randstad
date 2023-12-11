@@ -1,0 +1,17 @@
+({
+    check: function(component, event, helper) {
+        console.log('La funzione check è stata chiamata.');
+		let checkboxValue = component.get("v.checkbox");
+        console.log(checkboxValue);
+        const checkboxE =  document.getElementById("checkboxInfo");
+        console.log(checkboxE);
+        if (checkboxValue) {
+           checkboxE.innerHTML = "Conferma la firma";
+           component.set("v.checkbox",false)
+        } else {
+           checkboxE.innerHTML = "";
+           component.set("v.checkbox",true)
+
+        }
+    }
+})
