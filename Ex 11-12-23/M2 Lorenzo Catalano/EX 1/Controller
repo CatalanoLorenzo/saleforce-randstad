@@ -1,0 +1,44 @@
+({
+    calc: function (component, event, helper) {
+        let valueTrigger = event.getSource();
+        let dateBValue = new Date(component.get("v.dateB"));
+        let todayDate = new Date();
+        dateBValue.setFullYear(todayDate.getFullYear());
+
+        //controlla se è già passato il compleanno
+        if (todayDate > dateBValue) {
+            //se è già passato aggiunge 1 all'anno del compleanno
+            dateBValue.setFullYear(todayDate.getFullYear() + 1);
+        }
+
+        // Calcola la differenza in millisecondi
+        let differenceMSec = dateBValue.getTime() - todayDate.getTime();
+
+        // Calcola i giorni mancanti
+        let giorniMancanti = Math.ceil(differenceMSec / (1000 * 60 * 60 * 24));
+
+        //recupero il nodo della DOM del span
+        let spanE = document.getElementById("missingDay");
+        //scrivo all'interno dell'elemento i giorni mancanti 
+        spanE.innerHTML = giorniMancanti;
+    },
+    choise: function (component, event, helper) {
+		
+        //recupero il valore dell'attributo preference
+        let choiseValue = component.get("v.preference");
+        //recupero l'elemento della DOM che conterra il testo
+        let pE = document.getElementById("messagge");
+        //verifico le tre casistiche e ci scrivo all'interno dell'elemento il testo corispondente 
+        switch (choiseValue) {
+            case "1":
+                pE.innerHTML = "I viaggi sono i regali migliori in assoluto!";
+                break;
+            case "2":
+                pE.innerHTML = "Ottima idea!, anche io adoro i regali";
+                break;
+            case "3":
+                pE.innerHTML = "Speriamo che chi la organizzi li conosca bene";
+                break;
+        }
+    }
+})
