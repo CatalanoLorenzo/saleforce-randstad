@@ -1,0 +1,12 @@
+({
+    alert: function (component, event, helper) {
+
+        let nameValue = component.get("v.name");
+		let lastNameValue = component.get("v.lastName");
+		let emailValue = component.get("v.email");
+		let dateCompValue = component.get("v.dateComp");
+		let hoursSelectValue = component.get("v.hoursSelect");
+        alert(`${nameValue}${lastNameValue}${emailValue}${dateCompValue}${hoursSelectValue} `)
+        
+    }
+})
