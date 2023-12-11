@@ -1,0 +1,11 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<aura:attribute type="String" name="numero"></aura:attribute>
+    <aura:attribute type="integer" name="studenti"></aura:attribute>
+	<aura:attribute type="integer" name="numLezione"></aura:attribute>
+	
+    <p style="background-color: azure">info presenze lezioni</p>
+    <p style="background-color: azure">numero dei discenti per la lezione indicata <span>{!v.studenti}</span> </p>
+    <p style="background-color: azure">data <span>{!v.numero}</span> </p>
+    <p style="background-color: azure">numero lezioni <span>{!v.numLezione}</span> </p>
+
+</aura:component>
