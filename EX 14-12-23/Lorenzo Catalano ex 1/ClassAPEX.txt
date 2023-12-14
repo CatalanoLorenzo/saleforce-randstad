@@ -1,0 +1,13 @@
+public  with sharing  class CreateContactAPEX {
+	
+  @AuraEnabled
+	public static Contact CreateContact(Contact contactCreateOBJ){
+    try {
+      insert contactCreateOBJ;
+      return contactCreateOBJ;      
+    }
+    catch (Exception e) {
+      throw new AuraHandledException(e.getMessage());
+    }
+  }
+}
