@@ -1,0 +1,169 @@
+1)Quali sono le differenze principali tra un ruolo e un profilo?
+1]
+
+2)Due utenti possono avere la stessa tipologia di profilo?
+2]
+
+3)Quali sono le differenze tra static e final?
+3]
+
+4)Cosa sono le regole di validazione?
+4]
+
+5)Cos'è un trigger? Quali sono i tipi di trigger in SalesForce?
+5]
+
+6)Quando e perché si utilizza Apex? Quando js?Spiegare differenze, usi e similitudini
+6]
+
+7)Si spieghi cosa è un CRM
+7]
+
+8)Cosa indica l'acronimo MVC?
+8]
+
+9)Cos’è la sfdx ?
+9]
+
+10)Quali differenze ci sono tra un component aura lightning e un componente web lightning?
+10]
+
+11) Cosa si intende per deploy?
+11]
+
+12)La comunicazione tra componente padre e componente figlio è possibile?Se sì, come avviene?Se no, perché ?
+12]
+
+13) Quali sono le direttive presenti nel template lwc ?
+13]
+
+14) Cosa si intende per binding? Quanti tipi di binding conosci?
+14]
+
+15)Quali sono le differenze tra i decoratori @api,@track, @wire?
+15]
+
+16)Cosa distingue l’approccio dei componenti dall’approccio tradizionale per la creazione delle interfacce utente?
+16]
+
+17) Cosa si intende per DOM ?
+17]
+18)Indicare con degli esempi come si itera un elenco di dati in aura, lwc e visual force.
+18]
+
+19)A quali delle seguenti risorse si può accedere da un componente Web di Lightning ? Selezionare tutte le risposte possibil
+
+a. Javascript web components
+b. JS external libraries
+c. Aura components
+d. Static resources
+e. SVG files
+
+19]
+
+20)È stato creato un componente Web Lightning che incorpora un dashboard di analisi.
+Il team vendite desidera utilizzare questo componente nella home page della propria Org.
+Quale proprietà "target" deve essere aggiunta al file di configurazione per renderlo disponibile per la home page ?
+
+a. lightning__AppPage
+b.lightning__RecordPage
+c.lightning__HomePage
+d.lightning__page
+
+20]
+
+21)Uno sviluppatore ha creato un componente web personalizzato,searchLeadsCriteria, che consente al team di vendita di cercare i record dei lead in base a criteri selezionati. Utilizza il metodo del controllore Apex,queryLeads, per restituire un elenco di lead denominato leadList che soddisfano i criteri. Qual è il modo corretto per restituire un elenco di lead utilizzando le proprietà del componente web Lightning?
+
+a. @import(queryLeads, ‘$searchLeadsCriteria’)leadList;
+b. @wire(queryLeads, {searchLeadsCriteria: ‘$searchLeadsCriteria’})leadList;
+c. @api(queryLeads, {searchLeadsCriteria: ‘$searchLeadsCriteria’})leadList;
+d. @wire(queryLeads, ‘$searchLeadsCriteria’)leadList;
+
+21]
+
+22)Quale tag consente agli sviluppatori di riutilizzare il markup di una pagina Visualforce esistente in un'altra paginaVisualforce?
+
+a.<apex:include>.
+b.<apex:reuse>.
+c.<apex:actionSupport>.
+d.<apex:referencePage>.
+
+22]
+
+23)Come si utilizza Lightning Data Service per leggere e scrivere dati su Salesforce ?
+
+a. Utilizzando il decoratore @ wire in un componente Web Lightning.
+b. Invocando query SOQL direttamente dal componente.
+c. Modificando direttamente i record di Salesforce dal componente Lightning .
+d. Utilizzando la proprietà @api per vincolare i dati dei record in un componente Web Lightning.
+
+23]
+
+24)Come si usa Apex per creare regole di validazione personalizzate ( validation rules) ?
+
+a. Creando un trigger e lanciando un'eccezione personalizzata quando i dati inseriti non soddisfano i criteri.
+b. Creando una classe Apex con un metodo che restituisce un booleano.
+c. Scrivendo query SOQL per convalidare i dati dei record.
+d. Configurando una regola di convalida in Setup
+
+24]
+
+25)Come si utilizza il linguaggio di query SOQL per recuperare i dati da Salesforce ?
+
+a. Scrivendo codice JavaScript nei Lightning Web Components.
+b. Utilizzando l'istruzione SELECT seguita dai nomi dei campi e degli oggetti.
+c. Utilizzando operazioni DML come INSERT e UPDATE.
+d. Utilizzando il decoratore @api in un componente Web Lightning .
+
+25]
+
+26. Come si crea una relazione molti-a-molti tra oggetti in Salesforce?
+
+a. Creando una relazione di ricerca diretta (lookup) tra i due oggetti.
+b. Creando una relazione master-detail su entrambi gli oggetti.
+c. Creando un oggetto di giunzione che abbia relazioni master-detail con entrambi gli oggetti.
+d. Utilizzando campi formula su entrambi gli oggetti per fare riferimento l'uno all'altro.
+
+26]
+
+27) Come si gestiscono la sicurezza e l'accesso agli oggetti e ai campi personalizzati in Salesforce ?
+
+a. Utilizzando i layout di pagina per nascondere o visualizzare i campi.
+b. Configurando la sicurezza a livello di campo e i profili.
+c. Scrivendo trigger Apex per limitare l'accesso ai dati.
+d. Utilizzando le pagine Visualforce per visualizzare i dati degli oggetti personalizzati.
+
+27]
+
+28) Uno sviluppatore in un'organizzazione Salesforce con 100 account esegue il seguente codice utilizzando la console degli sviluppatori :
+
+            Account myAccount = new Account(Name ='MyAccount’);
+            Insert myAccount;
+            For(Integerx = 0; x <250; x++){
+              Account newAccount = new Account (Name='MyAccount' + x);
+              try{
+                Insert newAccount ;
+              }catch(Exception ex){
+                System.debug(ex) ;
+              }
+            }
+            insert new Account (Name='myAccount');
+
+Quanti account ci sono nell'org dopo questo codice? sono presenti nell'organizzazione dopo l'esecuzione di questo codice?
+
+28]
+
+29)Un'azienda ha un oggetto personalizzato chiamato Region.
+Ogni account in salesforce può essere collegato a una sola region alla volta, ma questa relazione è opzionale.
+Quale tipo di relazione deve utilizzare uno sviluppatore per mettere in relazione un Account con una Region?
+29]
+
+30. Come può uno sviluppatore recuperare tutte le label del tipo di record Opportunity per popolare una raccolta di collections?
+Scegliere 2 risposte.
+
+a. Ottenere i risultati della descrizione dell'oggetto Opportunity.
+b. Scrivere un ciclo for che estragga i valori dal campo Opportunity.RecordType.Name.
+c. Utilizzare la variabile globale $RecordType ed estrarre una lista dalla mappa.
+d. Scrivere un ciclo SOQL for che iteri sull'oggetto RecordType .
+
+30]
