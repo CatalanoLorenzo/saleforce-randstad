@@ -38,7 +38,7 @@ L’accesso ai dati, Apex essendo i linguaggio Per il Server-Side può accedere 
 11]Per Deploy si intente il “caricamento”sulla piattaforma del componente creato 
 
 12)La comunicazione tra componente padre e componente figlio è possibile?Se sì, come avviene?Se no, perché ?
-12]Si la comunicazione dal componente padre →componente figlio è possibile  ed avviene tramite “props” quindi nella dichiarazione del componente figlio gli si possono passare valori tramite attributi invece la comunicazione dal componente figlio → componente padre è possibile tramite eventi personallizzati presenti nel figlio che posso interagire con gli elementi del padre 
+12]Si la comunicazione dal componente padre →componente figlio è possibile  ed avviene  nella dichiarazione del componente figlio gli si possono passare valori tramite attributi invece la comunicazione dal componente figlio → componente padre è possibile tramite eventi personallizzati presenti nel figlio che posso interagire con gli elementi del padre 
 
 13) Quali sono le direttive presenti nel template lwc ?
 13] le direttive sono if:true if:false  elseif:{espressione}vengono  utilizzate per  la visualizzazione di un blocco di HTML in base al valore di un'espressione booleana.
