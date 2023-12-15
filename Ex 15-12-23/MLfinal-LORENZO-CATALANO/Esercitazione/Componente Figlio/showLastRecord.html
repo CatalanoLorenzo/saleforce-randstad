@@ -1,0 +1,8 @@
+<template>
+    <lightning-card>
+        <h1>Ultimi 5 Record:</h1>
+    <div for:each={recordList} for:item="elemento" key={elemento.id}>
+        <p >{elemento.Name}</p>
+    </div>
+</lightning-card>
+</template>
