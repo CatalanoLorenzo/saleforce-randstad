@@ -1,0 +1,18 @@
+public  with sharing  class NewRecordPharmacy {
+
+    @AuraEnabled
+	public static Pharmacy__c NewRecordPharm(Pharmacy__c basicOBJ){
+        try {
+                insert basicOBJ;
+                return basicOBJ;
+            
+        } catch (Exception e) {
+            throw new AuraHandledException(e.getMessage());
+        }
+    }
+ 
+	@AuraEnabled(cacheable=true)
+    public static List<Pharmacy__c> getLastFiveRecord() {
+        return [SELECT Id, Name,Address__c,Phone__c FROM Pharmacy__c ORDER BY CreatedDate DESC LIMIT 5];
+    }
+}
