@@ -110,13 +110,13 @@ e.   puoi accedere e utilizzare file SVG (Scalable Vector Graphics) nei componen
 20)È stato creato un componente Web Lightning che incorpora un dashboard di analisi.
 Il team vendite desidera utilizzare questo componente nella home page della propria Org.
 Quale proprietà "target" deve essere aggiunta al file di configurazione per renderlo disponibile per la home page ?
-
+b
 a. lightning__AppPage
 b.lightning__RecordPage
 c.lightning__HomePage
 d.lightning__page
 
-20]la C lightning__HomePage
+20]la C 
 
 21)Uno sviluppatore ha creato un componente web personalizzato,searchLeadsCriteria, che consente al team di vendita di cercare i record dei lead in base a criteri selezionati. Utilizza il metodo del controllore Apex,queryLeads, per restituire un elenco di lead denominato leadList che soddisfano i criteri. Qual è il modo corretto per restituire un elenco di lead utilizzando le proprietà del componente web Lightning?
 
@@ -125,7 +125,8 @@ b. @wire(queryLeads, {searchLeadsCriteria: ‘$searchLeadsCriteria’})leadList;
 c. @api(queryLeads, {searchLeadsCriteria: ‘$searchLeadsCriteria’})leadList;
 d. @wire(queryLeads, ‘$searchLeadsCriteria’)leadList;
 
-21]
+21]la b  @wire(queryLeads, {searchLeadsCriteria: ‘$searchLeadsCriteria’})leadList;
+perché ha il decoratore WIRE e quindi prende correttamente i dati dal serve, e si va a recuperare il  la lista ladList del metodo queryLeads passando come parametro la variabile reattiva 
 
 22)Quale tag consente agli sviluppatori di riutilizzare il markup di una pagina Visualforce esistente in un'altra paginaVisualforce?
 
@@ -134,7 +135,7 @@ b.<apex:reuse>.
 c.<apex:actionSupport>.
 d.<apex:referencePage>.
 
-22]
+22]a perché il tag <apex:include> consente   di incorporare il contenuto di una pagina Visualforce all'interno di un'altra pagina Visualforce
 
 23)Come si utilizza Lightning Data Service per leggere e scrivere dati su Salesforce ?
 
@@ -143,7 +144,8 @@ b. Invocando query SOQL direttamente dal componente.
 c. Modificando direttamente i record di Salesforce dal componente Lightning .
 d. Utilizzando la proprietà @api per vincolare i dati dei record in un componente Web Lightning.
 
-23]
+23]la a  perché il decoratore WIRE è utilizzato per connettersi a Lightning Data Service  in un componente LWC. Consente di richiamare i metodi di Apex, come le query SOQL, per leggere e scrivere dati su Salesforce.
+
 
 24)Come si usa Apex per creare regole di validazione personalizzate ( validation rules) ?
 
@@ -152,7 +154,7 @@ b. Creando una classe Apex con un metodo che restituisce un booleano.
 c. Scrivendo query SOQL per convalidare i dati dei record.
 d. Configurando una regola di convalida in Setup
 
-24]
+24]la b perchè  è possibile scrivere una classe Apex con metodi che verificano la convalida dei dati. Restituendo un valore booleano che indica se i dati soddisfano i criteri di validazione. Puoi possono essere richiamati in un trigger
 
 25)Come si utilizza il linguaggio di query SOQL per recuperare i dati da Salesforce ?
 
@@ -161,7 +163,7 @@ b. Utilizzando l'istruzione SELECT seguita dai nomi dei campi e degli oggetti.
 c. Utilizzando operazioni DML come INSERT e UPDATE.
 d. Utilizzando il decoratore @api in un componente Web Lightning .
 
-25]
+25]b
 
 26. Come si crea una relazione molti-a-molti tra oggetti in Salesforce?
 
@@ -170,7 +172,7 @@ b. Creando una relazione master-detail su entrambi gli oggetti.
 c. Creando un oggetto di giunzione che abbia relazioni master-detail con entrambi gli oggetti.
 d. Utilizzando campi formula su entrambi gli oggetti per fare riferimento l'uno all'altro.
 
-26]
+26]c cio è si crea un tabella pivot 
 
 27) Come si gestiscono la sicurezza e l'accesso agli oggetti e ai campi personalizzati in Salesforce ?
 
@@ -179,30 +181,30 @@ b. Configurando la sicurezza a livello di campo e i profili.
 c. Scrivendo trigger Apex per limitare l'accesso ai dati.
 d. Utilizzando le pagine Visualforce per visualizzare i dati degli oggetti personalizzati.
 
-27]
+27]b
 
 28) Uno sviluppatore in un'organizzazione Salesforce con 100 account esegue il seguente codice utilizzando la console degli sviluppatori :
 
-            Account myAccount = new Account(Name ='MyAccount’);
-            Insert myAccount;
-            For(Integerx = 0; x <250; x++){
-              Account newAccount = new Account (Name='MyAccount' + x);
-              try{
-                Insert newAccount ;
-              }catch(Exception ex){
-                System.debug(ex) ;
-              }
-            }
-            insert new Account (Name='myAccount');
+Account myAccount = new Account(Name ='MyAccount’);
+Insert myAccount;
+For(Integerx = 0; x <250; x++){
+Account newAccount = new Account (Name='MyAccount' + x);
+try{
+Insert newAccount ;
+}catch(Exception ex){
+System.debug(ex) ;
+}
+}
+insert new Account (Name='myAccount');
 
 Quanti account ci sono nell'org dopo questo codice? sono presenti nell'organizzazione dopo l'esecuzione di questo codice?
 
-28]
+28]352 perché 100 nello stato iniziale poi ad inizo codice ne viene inserito uno (100+1) poi che un ciclo di 250 passaggi e per ognuno di essi ne viene inserito uno ovviamente salvo errori (100+1+250) e infine dopo il ciclo for ne viene inserito un altro (100+1+250+1=352)
 
 29)Un'azienda ha un oggetto personalizzato chiamato Region.
 Ogni account in salesforce può essere collegato a una sola region alla volta, ma questa relazione è opzionale.
 Quale tipo di relazione deve utilizzare uno sviluppatore per mettere in relazione un Account con una Region?
-29]
+29]lookup perché questa configurazione consente a un singolo "Account" di essere collegato a una sola "Region", ma la relazione è opzionale perché il campo di ricerca diretta consente valori nulli.
 
 30. Come può uno sviluppatore recuperare tutte le label del tipo di record Opportunity per popolare una raccolta di collections?
 Scegliere 2 risposte.
@@ -212,4 +214,4 @@ b. Scrivere un ciclo for che estragga i valori dal campo Opportunity.RecordType.
 c. Utilizzare la variabile globale $RecordType ed estrarre una lista dalla mappa.
 d. Scrivere un ciclo SOQL for che iteri sull'oggetto RecordType .
 
-30]
+30]la a e la d
