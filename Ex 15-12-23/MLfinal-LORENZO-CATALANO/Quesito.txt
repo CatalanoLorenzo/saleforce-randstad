@@ -29,7 +29,7 @@ L’accesso ai dati, Apex essendo i linguaggio Per il Server-Side può accedere 
 8]l’acronimo MVC sta per Model View Controller ed è un tipo di architetture di un Framework dove le interazioni tra View e Model passato per un Controller che gestisce la logica,La View gestisce la visualizzazione dei dati e l’interazione con l’utente e il Model determina il tipo di dato e informa il controller di eventuali modifiche 
 
 9)Cos’è la sfdx ?
-9]sfdx è un ambiente di sviluppo di salesforce che permette di lavorare a singoli "componenti" e di lavorare in gruppo tramite la decentralizzazione
+9]sfdx è un strumento di sviluppo di salesforce che permette di lavorare a singoli "componenti" e di lavorare in gruppo tramite la decentralizzazione
 
 10)Quali differenze ci sono tra un component aura lightning e un componente web lightning?
 10]le principali differenze tra un Aura Component (lightning) e un lightnig Web Component è l’utilizzo dei  standard web quindi l’impiego di HTML CSS e JS moderno .
