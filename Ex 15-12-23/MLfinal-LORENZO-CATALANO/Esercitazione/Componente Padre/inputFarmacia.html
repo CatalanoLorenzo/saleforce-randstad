@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="New Account Record" icon-name="standard:account">
+        <div class="slds-grid slds-wrap">
+            <div class="slds-p-horizontal--small slds-col slds-size_6-of-12">
+                <div class="slds-form-element">˙
+                <lightning-input class="slds-col" label="Name" value={basicOBJ.name} onchange={setValueInputName}></lightning-input>
+                <lightning-input class="slds-col" label="Phone" value={basicOBJ.phone} onchange={setValueInputPhone}></lightning-input>
+                <lightning-input class="slds-col" label="Address" value={basicOBJ.address} onchange={setValueInputAddress}></lightning-input>
+                <br/>
+                <lightning-button label="Save Record" onclick={sendBasicOBJ}></lightning-button>
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+    <c-show-last-record record-list={list}></c-show-last-record>
+</template>
