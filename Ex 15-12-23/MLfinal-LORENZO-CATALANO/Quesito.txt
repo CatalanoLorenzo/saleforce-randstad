@@ -1,32 +1,38 @@
 1)Quali sono le differenze principali tra un ruolo e un profilo?
-1]
+1]Il profilo gestisce le autorizzazioni di base di un utente, determinando cosa può fare e cosa può vedere, mentre il ruolo definisce la gerarchia di accesso e influenza la visibilità dei dati in base.
 
 2)Due utenti possono avere la stessa tipologia di profilo?
-2]
+2]Si, perché un profilo può essere dato a più utenti e un utente può avere solo un profilo assegnato
 
 3)Quali sono le differenze tra static e final?
-3]
+3]Static assegnato a un metodo di una classe permette a quest’ultimo di essere invocato tramite il nome della classe e non tramite il nome dell’oggetto stanziato,non può essere sovrascritto nelle classi figlie usando l'annotazione “@Override” perché non è legato a un'istanza specifica della classe e non può accedere alle variabili e metodi dell’istanza 
+Final su una variabile indica un valore “costante” ciò è una variabile final dopo che è stata valorizzata non potrà cambiare più il suo valore . Su un metodo indica che quel metodo non può essere sovrascritto da classi figlie e non può essere estesa da altre classi
 
 4)Cosa sono le regole di validazione?
-4]
+4]Le regole di validazione sono regole che indicano che tipo di dato può essere assegnato ad un Fild di un Oggetto in salesforce e il controllo avviene durante la creazione o la modifica di un Record
 
 5)Cos'è un trigger? Quali sono i tipi di trigger in SalesForce?
-5]
+5]Un Trigger è un “blocco di codice” scritto in APEX in un file apposito con estensione .apxt. Che serve a descrivere un comportamento in un determinato stato.
+Essi possono essere before e after susseguiti  dall’azione (insert ,update,delete e undelete) 
+*undelete non lo si può usare con before perché può avvenire solo una azione dopo il ripristino dal cestino di un record
 
 6)Quando e perché si utilizza Apex? Quando js?Spiegare differenze, usi e similitudini
-6]
+6]Si utilizza Apex nell’ambito Server-Side perché è il linguaggio su cui si basa SalesForce, invece si utilizza JavaScript nell’ambito Client-Side perché il Framework essendo basati Web  utilizzano JS che è già incluso .
+Le differenze principali stra questi due Linguaggi di programmazione sono:
+La Tipizzazione dei dati, Apex è fortemente tipizzato quindi bisogna sempre dichiarare il tipo di dato.
+L’accesso ai dati, Apex essendo i linguaggio Per il Server-Side può accedere direttamente ai Record degli oggetti in SalesForce invece JS può interagire solo con chiamate API
 
 7)Si spieghi cosa è un CRM
-7]
+7]CRM sta per "Customer Relationship Management". Non è un gestionale.Un CRM è un sistema complesso o un insieme di processi .è progettato per gestire le interazioni e le relazioni con i clienti. L'obiettivo principale di un CRM è aiutare le aziende a migliorare la gestione delle relazioni con i clienti, ottimizzare le operazioni di vendita, marketing e servizio clienti
 
 8)Cosa indica l'acronimo MVC?
-8]
+8]l’acronimo MVC sta per Model View Controller ed è un tipo di architetture di un Framework dove le interazioni tra View e Model passato per un Controller che gestisce la logica,La View gestisce la visualizzazione dei dati e l’interazione con l’utente e il Model determina il tipo di dato e informa il controller di eventuali modifiche 
 
 9)Cos’è la sfdx ?
-9]
+9]sfdx è un ambiente di sviluppo di salesforce che permette di lavorare a singoli "componenti" e di lavorare in gruppo tramite la decentralizzazione
 
 10)Quali differenze ci sono tra un component aura lightning e un componente web lightning?
-10]
+10]le principali differenze tra un Aura Component (lightning) e un lightnig Web Component è l’utilizzo dei  standard web quindi l’impiego di HTML CSS e JS moderno .
 
 11) Cosa si intende per deploy?
 11]
