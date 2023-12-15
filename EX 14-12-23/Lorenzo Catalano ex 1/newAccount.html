@@ -4,8 +4,8 @@
      utilizzando lo ShowToastEvent . Si provi anche ad utilizzare le classi
       della system library di salesforce -->
 <template>
-    <lightning-card title="New Account Record" icon-name="standard:account">
-        <div class="slds-p-around_x-small slds-size_6-of-12">
+    <lightning-card title="New Account Record" icon-name="standard:account" class="slds-grid slds-wrap">
+        <div class="slds-p-horizontal--small slds-col slds-size_6-of-12">
             <lightning-input class="slds-col" label="FristName" value={contactCreateOBJ.FristName} onchange={setValueInputFristName}></lightning-input>
             <lightning-input class="slds-col" label="LastName" value={contactCreateOBJ.LastName} onchange={setValueInputLastName}></lightning-input>
             <lightning-input class="slds-col" type="date" label="BirthDate" value={contactCreateOBJ.BirthDate} onchange={setValueInputBirthDate}></lightning-input>
