@@ -35,27 +35,55 @@ L’accesso ai dati, Apex essendo i linguaggio Per il Server-Side può accedere 
 10]le principali differenze tra un Aura Component (lightning) e un lightnig Web Component è l’utilizzo dei  standard web quindi l’impiego di HTML CSS e JS moderno .
 
 11) Cosa si intende per deploy?
-11]
+11]Per Deploy si intente il “caricamento”sulla piattaforma del componente creato 
 
 12)La comunicazione tra componente padre e componente figlio è possibile?Se sì, come avviene?Se no, perché ?
-12]
+12]Si la comunicazione dal componente padre →componente figlio è possibile  ed avviene tramite “props” quindi nella dichiarazione del componente figlio gli si possono passare valori tramite attributi invece la comunicazione dal componente figlio → componente padre è possibile tramite eventi personallizzati presenti nel figlio che posso interagire con gli elementi del padre 
 
 13) Quali sono le direttive presenti nel template lwc ?
-13]
+13] le direttive sono if:true if:false  elseif:{espressione}vengono  utilizzate per  la visualizzazione di un blocco di HTML in base al valore di un'espressione booleana.
+ for:each{array} viene utilizzata per  la visualizzazione di un blocco di HTML per ogni elemento dell’array
 
 14) Cosa si intende per binding? Quanti tipi di binding conosci?
-14]
+14]Per blindig si intente la capacita di collegare tra loro due elementi ad esempio nei lwc è possibile collegare una variabile tra il Markup della pagina HTML e la logica della pagina JS adoperando la sintassi {nomevariabile} (nella pagina HTML) ma cio consente solo di poter visualizzare il valore della variabile nella View per poter modificarlo in quest’ultima c’e bisogno di utilizzare un  evento nella logica del Controller JS
 
 15)Quali sono le differenze tra i decoratori @api,@track, @wire?
-15]
+15]il decoratore @track consente di rendere disponibile a variabile nel controller Js in tutto il componente (è deprecata) il decoratore @api rende disponibile una variabile ad un componente superiore come un genitore o da un altra organizzazione il decoratore @wire permette di connettersi al server utilizzando metodi APEX
 
 16)Cosa distingue l’approccio dei componenti dall’approccio tradizionale per la creazione delle interfacce utente?
-16]
+16]L’approccio dei componenti consente il  riutilizzo e scomponibilità, in quanto un componente può contenere altri componenti, nonché HTML, CSS, JavaScript o qualsiasi altro codice abilitato per il Web.
 
 17) Cosa si intende per DOM ?
-17]
+17]la DOM( Document Object Model) è la rappresentazione del  modello orientato ad oggetti che rappresenta la Pagina Web visualizzata cio è la sua struttura gerarchica ad albero dove ogni elemento della pagina rappresenta un nodo della DOM
+
 18)Indicare con degli esempi come si itera un elenco di dati in aura, lwc e visual force.
-18]
+18]in un Aura Component si utilizza :
+<aura:component>
+	<aura:attribute name=”nomeLista” type=”List” />
+	<ul>
+		<aura:iteration items=”{!v.nomeLista}” var=”singoloElemento”>
+			<li>{!singoloElemento}</li>
+		</aura:iterator>
+	</ul>
+</aura:component>
+invece in un LWC:
+<template>
+	<ul>
+		<template for:each={nomeLista} for:item=”elemento”>
+			<li>{elemento.id}</li>
+		</template>
+	</ul>
+</template>
+ovviamente nel controller JS avremo un variabile nomeLista che conterrà un array di oggetti.
+Invece in VisualForce 
+<apex:page controller=”NomeController”>
+	<ul>
+		<apex:repeat value=”{!nomeLista}” var=”elemento”>
+			<li>{!elemento}</li>
+		</apex:repeat>
+	</ul>
+</apex:page>
+e nel mio controller creo una inizializzo una lista
 
 19)A quali delle seguenti risorse si può accedere da un componente Web di Lightning ? Selezionare tutte le risposte possibil
 
@@ -65,7 +93,13 @@ c. Aura components
 d. Static resources
 e. SVG files
 
-19]
+19]tutte e 5 perchè 
+a.   puoi accedere e utilizzare i componenti web JavaScript all'interno di un componente di Lightning Web.
+b.   è possibile utilizzare librerie JavaScript esterne all'interno di un componente di Lightning Web.
+c.   i componenti di Aura possono essere incorporati e utilizzati all'interno di un componente di Lightning Web mediante l'uso del tag <aura:...>.
+d.   è possibile accedere e utilizzare risorse statiche come immagini, fogli di stile CSS, file JavaScript, ecc., tramite risorse statiche.
+e.   puoi accedere e utilizzare file SVG (Scalable Vector Graphics) nei componenti di Lightning Web.
+
 
 20)È stato creato un componente Web Lightning che incorpora un dashboard di analisi.
 Il team vendite desidera utilizzare questo componente nella home page della propria Org.
@@ -76,7 +110,7 @@ b.lightning__RecordPage
 c.lightning__HomePage
 d.lightning__page
 
-20]
+20]la C lightning__HomePage
 
 21)Uno sviluppatore ha creato un componente web personalizzato,searchLeadsCriteria, che consente al team di vendita di cercare i record dei lead in base a criteri selezionati. Utilizza il metodo del controllore Apex,queryLeads, per restituire un elenco di lead denominato leadList che soddisfano i criteri. Qual è il modo corretto per restituire un elenco di lead utilizzando le proprietà del componente web Lightning?
 
