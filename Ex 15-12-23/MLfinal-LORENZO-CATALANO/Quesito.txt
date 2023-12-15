@@ -58,6 +58,7 @@ L’accesso ai dati, Apex essendo i linguaggio Per il Server-Side può accedere 
 
 18)Indicare con degli esempi come si itera un elenco di dati in aura, lwc e visual force.
 18]in un Aura Component si utilizza :
+
 <aura:component>
 	<aura:attribute name=”nomeLista” type=”List” />
 	<ul>
@@ -66,16 +67,20 @@ L’accesso ai dati, Apex essendo i linguaggio Per il Server-Side può accedere 
 		</aura:iterator>
 	</ul>
 </aura:component>
+
 invece in un LWC:
+
 <template>
 	<ul>
 		<template for:each={nomeLista} for:item=”elemento”>
 			<li>{elemento.id}</li>
 		</template>
 	</ul>
-</template>
-ovviamente nel controller JS avremo un variabile nomeLista che conterrà un array di oggetti.
+</template
+
+*ovviamente nel controller JS avremo un variabile nomeLista che conterrà un array di oggetti.
 Invece in VisualForce 
+
 <apex:page controller=”NomeController”>
 	<ul>
 		<apex:repeat value=”{!nomeLista}” var=”elemento”>
@@ -83,7 +88,8 @@ Invece in VisualForce
 		</apex:repeat>
 	</ul>
 </apex:page>
-e nel mio controller creo una inizializzo una lista
+
+*nel mio controller creo una inizializzo una lista
 
 19)A quali delle seguenti risorse si può accedere da un componente Web di Lightning ? Selezionare tutte le risposte possibil
 
